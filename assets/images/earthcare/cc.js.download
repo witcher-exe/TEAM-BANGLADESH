@@ -1,0 +1,1 @@
+if(console){var cookiedomainwarning='Error: The domain PREVIEW.THEMEFOREST.NET is not authorized to show the cookie banner for domain group ID d10f7659-aa82-4007-9cf1-54a9496002bf. Please add it to the domain group in the Cookiebot Manager to authorize the domain.';if(typeof console.warn === 'function'){console.warn(cookiedomainwarning)}else{console.log(cookiedomainwarning)}};
