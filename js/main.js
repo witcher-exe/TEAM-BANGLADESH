@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if(mobileBtn && desktopNav) {
         mobileBtn.addEventListener('click', () => {
-            desktopNav.style.display = desktopNav.style.display === 'block' ? 'none' : 'block';
+            desktopNav.classList.toggle('active');
         });
     }
 

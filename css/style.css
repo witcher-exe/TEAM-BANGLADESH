@@ -814,6 +814,42 @@ ul {
     box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
 }
 
+.team-slide .premium-rounded-img {
+    aspect-ratio: 1 / 1;
+}
+
+/* Testimonials */
+.testimonial-card {
+    background-color: var(--color-white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.testimonial-icon {
+    font-size: 40px;
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+}
+.testimonial-text {
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+.testimonial-author h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.testimonial-author span {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
 /* Guidelines */
 .policy-card {
     background-color: rgba(255,255,255,0.05);
@@ -942,17 +978,18 @@ ul {
 .newsletter-popup {
     position: fixed;
     bottom: 30px;
-    right: -400px; /* Hidden state */
+    right: 30px;
+    transform: translateX(150%);
     width: 320px;
     background-color: var(--color-dark);
     z-index: 9999;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-    transition: right 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .newsletter-popup.active {
-    right: 30px;
+    transform: translateX(0);
 }
 .close-popup {
     position: absolute;
@@ -1086,6 +1123,7 @@ ul {
     .about-content, .panel-text { margin-top: 40px; }
     .slide-content h1 { font-size: 50px; }
     .desktop-nav { display: none; }
+    .desktop-nav.active { display: block; }
     .mobile-menu-btn { display: block; }
     .nav-actions .btn { display: none; }
     .cta-inner { flex-direction: column; text-align: center; gap: 30px; }
@@ -1095,11 +1133,19 @@ ul {
 @media (max-width: 768px) {
     .grid-4 { grid-template-columns: 1fr; }
     .slide-content h1 { font-size: 40px; }
-    .float-badge { width: 140px; height: 140px; right: 0; }
+    .float-badge { 
+        position: relative; 
+        margin: 20px auto 0; 
+        width: 140px; 
+        height: 140px; 
+        right: auto; 
+        bottom: auto; 
+    }
 
     /* Bug 1: Navbar responsive */
     .nav-bar { position: relative; }
     .desktop-nav {
+        display: none;
         position: absolute;
         top: 100%;
         left: 0;
@@ -1108,6 +1154,7 @@ ul {
         padding: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
+    .desktop-nav.active { display: block; }
     .desktop-nav ul {
         flex-direction: column;
         align-items: flex-start;
@@ -1122,6 +1169,11 @@ ul {
         border: none;
         background: transparent;
         padding-left: 15px;
+        display: none;
+    }
+    .desktop-nav .has-dropdown:hover .dropdown,
+    .desktop-nav .has-dropdown:active .dropdown {
+        display: flex;
     }
     .desktop-nav .donate-item {
         margin-left: 0 !important;
@@ -1130,10 +1182,11 @@ ul {
     /* Bug 2: Newsletter popup */
     .newsletter-popup {
         width: calc(100% - 40px);
-        right: -100%;
+        right: 20px;
+        transform: translateX(150%);
     }
     .newsletter-popup.active {
-        right: 20px;
+        transform: translateX(0);
     }
     .close-popup {
         width: 44px;
