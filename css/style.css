@@ -1092,9 +1092,74 @@ ul {
     .cta-content h2 { font-size: 28px; }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .grid-4 { grid-template-columns: 1fr; }
     .slide-content h1 { font-size: 40px; }
-    .counter-grid { grid-template-columns: 1fr; gap: 30px; }
     .float-badge { width: 140px; height: 140px; right: 0; }
+
+    /* Bug 1: Navbar responsive */
+    .nav-bar { position: relative; }
+    .desktop-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .desktop-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    .desktop-nav .has-dropdown .dropdown {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 15px;
+    }
+    .desktop-nav .donate-item {
+        margin-left: 0 !important;
+    }
+
+    /* Bug 2: Newsletter popup */
+    .newsletter-popup {
+        width: calc(100% - 40px);
+        right: -100%;
+    }
+    .newsletter-popup.active {
+        right: 20px;
+    }
+    .close-popup {
+        width: 44px;
+        height: 44px;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Bug 3: Excessive whitespace in Group Guidelines */
+    .guidelines-section .section-title {
+        margin-bottom: 5px;
+    }
+    .guidelines-section p.mt-20 {
+        margin-top: 5px;
+    }
+
+    /* Bug 4: Stats and Key Areas */
+    .counter-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+        text-align: center;
+    }
+    .activity-card {
+        padding: 24px 16px;
+    }
 }

@@ -154,10 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const closePopupBtn = document.querySelector('.close-popup');
     
     if(popup) {
-        // Show after 6 seconds of browsing
+        // Delay popup by 8 seconds on mobile, 6 seconds on desktop
+        const delay = window.innerWidth <= 768 ? 8000 : 6000;
         setTimeout(() => {
             popup.classList.add('active');
-        }, 6000);
+        }, delay);
 
         closePopupBtn.addEventListener('click', () => {
             popup.classList.remove('active');
