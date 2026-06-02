@@ -86,6 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Scroll Reveal Animations
+    // Auto-reveal elements on load for better animation
+    const autoRevealElements = document.querySelectorAll('.btn:not(.reveal-up), .section-title, .activity-card, .policy-card, .testimonial-card, .counter-item, .float-badge');
+    autoRevealElements.forEach((el, index) => {
+        el.classList.add('reveal-up');
+        if(index % 3 === 1) el.classList.add('delay-1');
+        if(index % 3 === 2) el.classList.add('delay-2');
+    });
+
     const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
     
     const revealOnScroll = () => {
@@ -154,11 +162,19 @@ document.addEventListener('DOMContentLoaded', () => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const dropdown = this.parentElement.querySelector('.dropdown');
-                const isOpen = dropdown.style.display === 'block';
+                const isOpen = dropdown.classList.contains('active');
+                
                 // Close all dropdowns first
-                document.querySelectorAll('.desktop-nav .dropdown').forEach(d => d.style.display = 'none');
+                document.querySelectorAll('.desktop-nav .dropdown').forEach(d => {
+                    d.classList.remove('active');
+                    d.style.maxHeight = null;
+                });
+                
                 // Toggle this one
-                dropdown.style.display = isOpen ? 'none' : 'block';
+                if (!isOpen) {
+                    dropdown.classList.add('active');
+                    dropdown.style.maxHeight = dropdown.scrollHeight + "px";
+                }
             });
         });
     }
