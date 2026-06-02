@@ -149,6 +149,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (window.innerWidth <= 991) {
+        document.querySelectorAll('.desktop-nav .has-dropdown > a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const dropdown = this.parentElement.querySelector('.dropdown');
+                const isOpen = dropdown.style.display === 'block';
+                // Close all dropdowns first
+                document.querySelectorAll('.desktop-nav .dropdown').forEach(d => d.style.display = 'none');
+                // Toggle this one
+                dropdown.style.display = isOpen ? 'none' : 'block';
+            });
+        });
+    }
+
     // 6. Newsletter Popup Logic
     const popup = document.querySelector('.newsletter-popup');
     const closePopupBtn = document.querySelector('.close-popup');

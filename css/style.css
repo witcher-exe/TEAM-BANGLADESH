@@ -32,6 +32,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     color: var(--color-dark);
@@ -1128,11 +1132,51 @@ ul {
     .nav-actions .btn { display: none; }
     .cta-inner { flex-direction: column; text-align: center; gap: 30px; }
     .cta-content h2 { font-size: 28px; }
+
+    .desktop-nav .has-dropdown .dropdown {
+        display: none;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        padding-left: 15px;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 768px) {
     .grid-4 { grid-template-columns: 1fr; }
-    .slide-content h1 { font-size: 40px; }
+    .slide-content h1 {
+        font-size: 28px;
+        line-height: 1.25;
+        word-break: break-word;
+        max-width: 100%;
+    }
+    .slide-content .handwriting {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+    .hero-btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .hero-btns .btn {
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+    .pt-120 { padding-top: 60px; }
+    .pb-120 { padding-bottom: 60px; }
+    .pt-100 { padding-top: 60px; }
+    .pb-70  { padding-bottom: 50px; }
+    .pt-80  { padding-top: 50px; }
+    .pb-80  { padding-bottom: 50px; }
+    .mt-50  { margin-top: 30px; }
+    .section-title { font-size: 30px; }
+    
     .float-badge { 
         position: relative; 
         margin: 20px auto 0; 
@@ -1160,33 +1204,21 @@ ul {
         align-items: flex-start;
         gap: 15px;
     }
-    .desktop-nav .has-dropdown .dropdown {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        padding-left: 15px;
-        display: none;
-    }
-    .desktop-nav .has-dropdown:hover .dropdown,
-    .desktop-nav .has-dropdown:active .dropdown {
-        display: flex;
-    }
     .desktop-nav .donate-item {
         margin-left: 0 !important;
     }
 
     /* Bug 2: Newsletter popup */
     .newsletter-popup {
-        width: calc(100% - 40px);
-        right: 20px;
-        transform: translateX(150%);
+        width: min(340px, calc(100% - 32px));
+        right: 50%;
+        transform: translateX(50%) translateX(400px);
+        bottom: 20px;
+        transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .newsletter-popup.active {
-        transform: translateX(0);
+        right: 50%;
+        transform: translateX(50%);
     }
     .close-popup {
         width: 44px;
