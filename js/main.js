@@ -232,4 +232,19 @@ document.addEventListener('DOMContentLoaded', () => {
         showTeamSlide(index);
     };
 
+    // 8. Footer Accordion Logic (Mobile)
+    const footerAccordions = document.querySelectorAll('.accordion-btn');
+    footerAccordions.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const group = this.parentElement;
+            
+            // Optional: Close others
+            document.querySelectorAll('.accordion-group').forEach(g => {
+                if(g !== group) g.classList.remove('active');
+            });
+            
+            group.classList.toggle('active');
+        });
+    });
+
 });

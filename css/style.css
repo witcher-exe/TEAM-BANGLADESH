@@ -921,61 +921,178 @@ ul {
 }
 
 /* Footer */
+/* Footer */
 .site-footer {
     background-color: var(--color-dark);
     color: #a0a0a0;
+    padding: 64px 56px 64px 140px;
 }
-.widget-title {
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* ── Left brand column ── */
+.footer-left {
+    max-width: 420px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.footer-left-top {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.footer-logo-area .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+.footer-logo-area .logo-text {
+    font-size: 36px;
+    font-weight: 800;
     color: var(--color-white);
-    font-size: 22px;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 15px;
 }
-.widget-title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 40px;
-    height: 2px;
-    background-color: var(--color-primary);
+
+/* Follow us */
+.follow-text {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    color: #a0a0a0;
+    margin-bottom: 16px;
+}
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 .footer-socials a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(255,255,255,0.05);
-    color: var(--color-white);
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    margin-right: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--color-white);
+    font-size: 16px;
+    background: transparent;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 .footer-socials a:hover {
     background-color: var(--color-primary);
     transform: translateY(-3px);
 }
-.footer-links li, .contact-list li {
-    margin-bottom: 15px;
+
+/* Company info block */
+.footer-company-info {
+    margin-top: 30px;
+    font-size: 14px;
+    line-height: 150%;
+    color: #a0a0a0;
+}
+.footer-company-info p {
+    margin: 0;
+    max-width: 420px;
+}
+.footer-company-info i {
+    width: 16px;
+    color: var(--color-primary);
+    margin-right: 6px;
+}
+.footer-company-info .copyright {
+    font-size: 14px;
+    color: #a0a0a0;
+    margin-top: 32px;
+}
+
+.mobile-only {
+    display: none;
+}
+.desktop-only {
+    display: block;
+}
+
+/* ── Right nav section ── */
+.footer-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+.footer-menus {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px;
+    width: 100%;
+}
+.footer-menu-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Column title (e.g. "Quick Links", "Help") */
+.widget-title {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    color: #a0a0a0;
+    padding-bottom: 24px;
+    margin-bottom: 0;
+    position: relative;
+    cursor: default;
+}
+.widget-title::after {
+    display: none;
+}
+
+/* Column links */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-links li {
+    margin: 0;
     transition: transform 0.3s ease;
 }
-.footer-links li:hover, .contact-list li:hover {
-    transform: translateX(5px);
+.footer-links li:hover {
+    transform: translateX(4px);
+}
+.footer-links a {
+    display: block;
+    width: fit-content;
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 400;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.15s ease;
 }
 .footer-links a:hover {
     color: var(--color-primary);
 }
+
+/* Contact Info column icons */
 .contact-list i {
     color: var(--color-primary);
-    margin-right: 15px;
-    width: 20px;
+    margin-right: 8px;
+    width: 16px;
     text-align: center;
 }
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding: 25px 0;
-    font-size: 14px;
+
+/* Remove display:block so it inherits flex column and gap works */
+.accordion-content {
 }
 
 /* Newsletter Popup */
@@ -1316,5 +1433,66 @@ ul {
     }
     .activity-card {
         padding: 24px 16px;
+    }
+    
+    /* Mobile Footer Accordion */
+    .site-footer {
+        padding: 40px 20px;
+    }
+    .footer-container {
+        flex-direction: column;
+    }
+    .footer-left {
+        align-items: center;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .footer-menus {
+        flex-direction: column;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+    .footer-menu-col {
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 0;
+    }
+    .footer-menu-col:first-child {
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .widget-title.accordion-btn {
+        margin-bottom: 0;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, margin-bottom 0.3s ease;
+        margin-bottom: 0;
+    }
+    .accordion-group.active .accordion-content {
+        max-height: 300px;
+        margin-bottom: 20px;
+    }
+    .accordion-group.active .accordion-btn i {
+        transform: rotate(180deg);
+    }
+    .mobile-footer-divider {
+        border: none;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        margin: 30px 0;
+    }
+    .footer-company-info {
+        text-align: left;
+    }
+    .footer-socials {
+        justify-content: center;
     }
 }
