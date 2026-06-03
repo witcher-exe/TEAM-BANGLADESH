@@ -1445,12 +1445,8 @@ ul {
     .footer-left {
         align-items: center;
         text-align: center;
-        margin-bottom: 40px;
-    }
-    .footer-menus {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
+        max-width: 100%;
+        margin-bottom: 32px;
     }
     .desktop-only {
         display: none;
@@ -1462,43 +1458,59 @@ ul {
         padding-left: 0;
         align-items: flex-start;
         width: 100%;
+        flex: none;
+    }
+    .footer-menus {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
     }
     .footer-menu-col {
-        border: none;
-        margin-bottom: 20px;
+        border: none !important;
+        margin-bottom: 12px;
+        width: 100%;
     }
     .footer-menu-col:first-child {
-        border: none;
+        border: none !important;
     }
+    /* Make accordion title white and clearly visible */
     .widget-title.accordion-btn {
-        margin-bottom: 15px;
-        padding: 0;
+        color: #ffffff !important;
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 0;
+        padding: 14px 0;
         display: flex;
         justify-content: flex-start;
         gap: 10px;
         align-items: center;
         cursor: pointer;
+        width: 100%;
     }
-    .widget-title.accordion-btn i {
-        font-size: 14px;
+    .widget-title.accordion-btn i.mobile-only {
+        display: inline-block;
+        font-size: 13px;
+        color: #ffffff;
+        transition: transform 0.3s ease;
     }
     .accordion-content {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease, margin-bottom 0.3s ease;
+        transition: max-height 0.35s ease, margin-bottom 0.3s ease;
         margin-bottom: 0;
     }
     .accordion-group.active .accordion-content {
         max-height: 300px;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
     .accordion-group.active .accordion-btn i {
         transform: rotate(180deg);
     }
     .mobile-footer-divider {
         border: none;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        margin: 30px 0;
+        border-top: 1px solid rgba(255,255,255,0.12);
+        margin: 24px 0 20px;
     }
     .footer-company-info {
         text-align: left;
