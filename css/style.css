@@ -1448,7 +1448,9 @@ ul {
         margin-bottom: 40px;
     }
     .footer-menus {
+        display: flex;
         flex-direction: column;
+        gap: 0;
     }
     .desktop-only {
         display: none;
@@ -1456,20 +1458,29 @@ ul {
     .mobile-only {
         display: block;
     }
+    .footer-right {
+        padding-left: 0;
+        align-items: flex-start;
+        width: 100%;
+    }
     .footer-menu-col {
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-        margin-bottom: 0;
+        border: none;
+        margin-bottom: 20px;
     }
     .footer-menu-col:first-child {
-        border-top: 1px solid rgba(255,255,255,0.1);
+        border: none;
     }
     .widget-title.accordion-btn {
-        margin-bottom: 0;
-        padding: 20px 0;
+        margin-bottom: 15px;
+        padding: 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
+        gap: 10px;
         align-items: center;
         cursor: pointer;
+    }
+    .widget-title.accordion-btn i {
+        font-size: 14px;
     }
     .accordion-content {
         max-height: 0;
