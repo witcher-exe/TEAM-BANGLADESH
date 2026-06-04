@@ -232,6 +232,121 @@ document.addEventListener('DOMContentLoaded', () => {
         showTeamSlide(index);
     };
 
+    // 7.5. Testimonial Carousel Slider with Swiping and Autoplay
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialDots = document.querySelectorAll('.testimonial-dot');
+    const testimonialWrapper = document.querySelector('.testimonial-slides-wrapper');
+    let currentTestimonialSlide = 0;
+    let testimonialInterval;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function showTestimonialSlide(index, direction = 'next') {
+        if (!testimonialSlides.length) return;
+        
+        const prev = currentTestimonialSlide;
+        currentTestimonialSlide = ((index % testimonialSlides.length) + testimonialSlides.length) % testimonialSlides.length;
+
+        // Reset previous classes
+        testimonialSlides[prev].classList.remove('active', 'exit-left', 'exit-right', 'enter-left');
+        
+        if (direction === 'next') {
+            testimonialSlides[prev].classList.add('exit-left');
+            testimonialSlides[currentTestimonialSlide].classList.remove('enter-left');
+        } else {
+            testimonialSlides[prev].classList.add('exit-right');
+            testimonialSlides[currentTestimonialSlide].classList.add('enter-left');
+        }
+        
+        // Let reflow happen for enter classes
+        void testimonialSlides[currentTestimonialSlide].offsetWidth;
+
+        testimonialSlides[currentTestimonialSlide].classList.add('active');
+
+        // Clean up classes after transition
+        setTimeout(() => {
+            testimonialSlides[prev].classList.remove('exit-left', 'exit-right');
+            testimonialSlides[currentTestimonialSlide].classList.remove('enter-left');
+        }, 600);
+
+        testimonialDots.forEach(d => d.classList.remove('active'));
+        if (testimonialDots[currentTestimonialSlide]) {
+            testimonialDots[currentTestimonialSlide].classList.add('active');
+        }
+    }
+
+    function nextTestimonialSlide() {
+        showTestimonialSlide(currentTestimonialSlide + 1, 'next');
+    }
+
+    function prevTestimonialSlide() {
+        showTestimonialSlide(currentTestimonialSlide - 1, 'prev');
+    }
+
+    window.goToTestimonialSlide = function(index) {
+        if (index === currentTestimonialSlide) return;
+        const direction = index > currentTestimonialSlide ? 'next' : 'prev';
+        showTestimonialSlide(index, direction);
+        resetTestimonialInterval();
+    };
+
+    function startTestimonialInterval() {
+        testimonialInterval = setInterval(nextTestimonialSlide, 4000);
+    }
+
+    function resetTestimonialInterval() {
+        clearInterval(testimonialInterval);
+        startTestimonialInterval();
+    }
+
+    if (testimonialWrapper) {
+        startTestimonialInterval();
+
+        // Touch swipe logic
+        testimonialWrapper.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+            clearInterval(testimonialInterval); // pause on touch
+        }, {passive: true});
+
+        testimonialWrapper.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+            startTestimonialInterval(); // resume
+        }, {passive: true});
+
+        // Mouse swipe logic (Drag)
+        let isDragging = false;
+        testimonialWrapper.addEventListener('mousedown', e => {
+            isDragging = true;
+            touchStartX = e.screenX;
+            clearInterval(testimonialInterval);
+        });
+
+        testimonialWrapper.addEventListener('mouseup', e => {
+            if (!isDragging) return;
+            isDragging = false;
+            touchEndX = e.screenX;
+            handleSwipe();
+            startTestimonialInterval();
+        });
+
+        testimonialWrapper.addEventListener('mouseleave', () => {
+            if (isDragging) {
+                isDragging = false;
+                startTestimonialInterval();
+            }
+        });
+
+        function handleSwipe() {
+            const threshold = 50; // min swipe distance
+            if (touchStartX - touchEndX > threshold) {
+                nextTestimonialSlide();
+            } else if (touchEndX - touchStartX > threshold) {
+                prevTestimonialSlide();
+            }
+        }
+    }
+
     // 8. Footer Accordion Logic (Mobile)
     const footerAccordions = document.querySelectorAll('.accordion-btn');
     footerAccordions.forEach(btn => {
@@ -246,5 +361,30 @@ document.addEventListener('DOMContentLoaded', () => {
             group.classList.toggle('active');
         });
     });
+
+    // 9. Contact Us Popup Logic
+    const contactTriggers = document.querySelectorAll('.contact-trigger-btn');
+    const contactPopup = document.getElementById('contact-popup');
+    const closeContactPopup = document.querySelector('.close-contact-popup');
+
+    if(contactPopup && closeContactPopup) {
+        contactTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                contactPopup.classList.add('active');
+            });
+        });
+
+        closeContactPopup.addEventListener('click', () => {
+            contactPopup.classList.remove('active');
+        });
+
+        // Close on outside click
+        contactPopup.addEventListener('click', (e) => {
+            if (e.target === contactPopup) {
+                contactPopup.classList.remove('active');
+            }
+        });
+    }
 
 });
