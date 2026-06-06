@@ -4,10 +4,8 @@
 
 /* Variables */
 :root {
-    --color-primary: #53762d;
-    /* Earthcare Green */
-    --color-secondary: #EFA657;
-    /* Earthcare Amber/Orange */
+    --color-primary: #53762d; /* Original Earthcare Green */
+    --color-secondary: #EFA657; /* Original Earthcare Amber/Orange */
     --color-dark: #0A121F;
     --color-text: #666666;
     --color-light: #F4F7F6;
@@ -362,8 +360,16 @@ ul {
 .logo-text {
     font-size: 28px;
     font-weight: 800;
-    color: var(--color-primary);
+    color: var(--color-white); /* Changed to white for dark backgrounds */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Adds a soft dark shadow to pop off the glass */
     letter-spacing: -1px;
+    transition: var(--transition);
+}
+
+/* Add this right below it so it turns green when the user scrolls */
+.nav-bar.scrolled .logo-text {
+    color: var(--color-primary);
+    text-shadow: none; /* Removes shadow when scrolled */
 }
 
 .desktop-nav ul {
