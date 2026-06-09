@@ -294,6 +294,18 @@ ul {
     }
 }
 
+#splash-logo {
+    width: 200px;
+    height: auto;
+    transform-origin: center;
+}
+
+@keyframes pulseLogo {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -2726,12 +2738,15 @@ ul {
     /* Adds a beautiful 10px gap right between the main and sub-dropdown menus */
     left: calc(100% + 10px) !important; 
     top: -10px !important; /* aligns perfectly to the top of the item container */
-    background: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.65) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
     min-width: 230px !important;
     margin: 0 !important;
     padding: 15px 0 !important; /* Uniform theme tracking padding */
     list-style: none !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
     border-top: 3px solid var(--color-primary) !important; /* Matches main top accent color */
     border-radius: 4px;
     

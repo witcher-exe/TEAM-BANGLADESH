@@ -2,19 +2,88 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 1. Preloader Logic
     const preloader = document.getElementById('splash-screen');
+    const splashLogo = document.getElementById('splash-logo');
+    const navLogo = document.getElementById('nav-splash-logo');
+    
+    const hasSeenSplash = sessionStorage.getItem('splashShown');
+
     const removePreloader = () => {
         if(preloader) {
-            preloader.classList.add('fade-out');
-            setTimeout(() => preloader.style.display = 'none', 1500);
+            if(splashLogo && navLogo && !hasSeenSplash) {
+                preloader.style.backgroundColor = 'transparent';
+                navLogo.style.display = 'block';
+                
+                const targetRect = navLogo.getBoundingClientRect();
+                const startRect = splashLogo.getBoundingClientRect();
+                
+                splashLogo.style.position = 'fixed';
+                splashLogo.style.left = startRect.left + 'px';
+                splashLogo.style.top = startRect.top + 'px';
+                splashLogo.style.width = startRect.width + 'px';
+                splashLogo.style.height = startRect.height + 'px';
+                splashLogo.style.margin = '0';
+                splashLogo.style.animation = 'none';
+                
+                void splashLogo.offsetWidth; // trigger reflow
+                
+                splashLogo.style.transition = 'all 1s cubic-bezier(0.25, 0.1, 0.25, 1)';
+                splashLogo.style.left = targetRect.left + 'px';
+                splashLogo.style.top = targetRect.top + 'px';
+                splashLogo.style.width = targetRect.width + 'px';
+                splashLogo.style.height = targetRect.height + 'px';
+                
+                setTimeout(() => {
+                    splashLogo.style.display = 'none';
+                    navLogo.style.opacity = '1';
+                    preloader.style.display = 'none';
+                    sessionStorage.setItem('splashShown', 'true');
+                }, 1000);
+            } else {
+                if(navLogo) {
+                    navLogo.style.display = 'block';
+                    navLogo.style.opacity = '1';
+                    navLogo.style.transition = 'none';
+                }
+                preloader.style.display = 'none';
+            }
         }
     };
-    const fallbackTimer = setTimeout(removePreloader, 4000);
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            clearTimeout(fallbackTimer);
-            removePreloader();
-        }, 1500);
-    });
+
+    if(hasSeenSplash) {
+        removePreloader();
+    } else {
+        const splash1 = document.getElementById('splash-img-1');
+        const splash2 = document.getElementById('splash-img-2');
+        const splash3 = document.getElementById('splash-img-3');
+        
+        if(splash1 && splash2 && splash3 && splashLogo) {
+            setTimeout(() => {
+                splash1.style.opacity = '1';
+            }, 500);
+            setTimeout(() => {
+                splash2.style.opacity = '1';
+            }, 1500);
+            setTimeout(() => {
+                splash3.style.opacity = '1';
+            }, 2500);
+            
+            setTimeout(() => {
+                splashLogo.style.opacity = '1';
+                splash1.style.display = 'none';
+                splash2.style.display = 'none';
+                splash3.style.display = 'none';
+                removePreloader();
+            }, 3500);
+        } else {
+            const fallbackTimer = setTimeout(removePreloader, 4000);
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    clearTimeout(fallbackTimer);
+                    removePreloader();
+                }, 1500);
+            });
+        }
+    }
 
     // 2. Sticky Navigation
     const navBar = document.querySelector('.nav-bar');
@@ -258,5 +327,137 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 9. Footer Accordion Mobile
+    const accordionBtns = document.querySelectorAll('.accordion-btn');
+    accordionBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const isMobile = window.innerWidth <= 768;
+            if (!isMobile) return;
+            e.preventDefault();
+            
+            const group = this.closest('.accordion-group');
+            const content = group.querySelector('.accordion-content');
+            
+            document.querySelectorAll('.accordion-group').forEach(otherGroup => {
+                if (otherGroup !== group) {
+                    otherGroup.classList.remove('active');
+                    const otherContent = otherGroup.querySelector('.accordion-content');
+                    if (otherContent) otherContent.style.maxHeight = null;
+                }
+            });
+            
+            group.classList.toggle('active');
+            if (group.classList.contains('active')) {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } else {
+                content.style.maxHeight = null;
+            }
+        });
+    });
+
+    // 10. Carousels (Team & Testimonials)
+    const initCarousel = (wrapperSelector, slideSelector, dotSelector, nextBtnSelector, autoPlayInterval) => {
+        const wrapper = document.querySelector(wrapperSelector);
+        if(!wrapper) return;
+        const slides = wrapper.querySelectorAll(slideSelector);
+        const dots = document.querySelectorAll(dotSelector);
+        if(slides.length === 0) return;
+        
+        let currentSlide = 0;
+        let interval;
+        const isTeam = slideSelector.includes('team');
+        const prefix = isTeam ? 'Team' : 'Testimonial';
+
+        window['goTo' + prefix + 'Slide'] = (index) => {
+            currentSlide = index;
+            updateSlides();
+            resetInterval();
+        };
+
+        window['next' + prefix + 'Slide'] = () => {
+            currentSlide = (currentSlide + 1) % slides.length;
+            updateSlides();
+            resetInterval();
+        };
+
+        window['prev' + prefix + 'Slide'] = () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            updateSlides();
+            resetInterval();
+        };
+
+        const updateSlides = () => {
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            if(slides[currentSlide]) slides[currentSlide].classList.add('active');
+            if(dots[currentSlide]) dots[currentSlide].classList.add('active');
+        };
+
+        const resetInterval = () => {
+            if(interval) clearInterval(interval);
+            if(autoPlayInterval) {
+                interval = setInterval(window['next' + prefix + 'Slide'], autoPlayInterval);
+            }
+        };
+        
+        resetInterval();
+
+        let startX = 0;
+        let endX = 0;
+        let isDragging = false;
+        
+        // Touch events
+        wrapper.addEventListener('touchstart', e => {
+            startX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        wrapper.addEventListener('touchend', e => {
+            endX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, {passive: true});
+
+        // Mouse events
+        wrapper.addEventListener('mousedown', e => {
+            startX = e.screenX;
+            isDragging = true;
+            wrapper.style.cursor = 'grabbing';
+        });
+
+        wrapper.addEventListener('mousemove', e => {
+            if(!isDragging) return;
+            endX = e.screenX;
+        });
+
+        wrapper.addEventListener('mouseup', e => {
+            if(!isDragging) return;
+            endX = e.screenX;
+            isDragging = false;
+            wrapper.style.cursor = 'grab';
+            handleSwipe();
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+            if(isDragging) {
+                isDragging = false;
+                wrapper.style.cursor = 'grab';
+                handleSwipe();
+            }
+        });
+
+        wrapper.style.cursor = 'grab';
+
+        const handleSwipe = () => {
+            if (endX < startX - 50) {
+                window['next' + prefix + 'Slide']();
+            }
+            if (endX > startX + 50) {
+                window['prev' + prefix + 'Slide']();
+            }
+        };
+    };
+
+    initCarousel('.team-slides-wrapper', '.team-slide', '.team-dot', '.team-next-btn', 0);
+    initCarousel('.testimonial-slides-wrapper', '.testimonial-slide', '.testimonial-dot', '.testimonial-next-btn', 5000);
 
 });

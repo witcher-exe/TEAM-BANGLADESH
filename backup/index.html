@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Bangladesh | Environment & Social Development</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Rock+Salt&family=Rubik:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- PHASE 1: PRELOADER (Splash Screen) -->
+    <div id="splash-screen" class="preloader-wrapper">
+        <div class="preloader-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" class="qodef-svg--animated-logo-loader" width="106" height="108"
+                viewBox="0 0 53 54">
+                <path class="qodef-short-path"
+                    d="M22.504,53s2.1222-1.7174,3.874-1.7174c1.875,0,3.9475,1.7174,3.9475,1.7174"></path>
+                <path class="qodef-long-path"
+                    d="M8.2536,45.777s3.177,2.8731,5.8029,3.1683c5.5439.6233,9.5334-3.48,12.3214-3.48,3.2221,0,6.42,3.5853,10.942,3.48,2.5639-.06,5.9065-1.2985,7.4609-3.0125">
+                </path>
+                <path class="qodef-long-path"
+                    d="M2.6842,39.9424a6.6641,6.6641,0,0,1,3.497-.9175c2.5906.3636,5.8916,3.8232,8.86,4.1032,4.404.4155,7.6348-4.1592,11.337-4.2,4.1547-.0454,6.21,4.5112,10.9938,4.2032,3.5406-.228,6.4189-4.2166,9.1189-4.2483a5.2889,5.2889,0,0,1,2.85.8166">
+                </path>
+                <path class="qodef-long-path"
+                    d="M1,34.2464a11.8873,11.8873,0,0,1,4.5076-1.35c3.742-.1375,6.9428,4.0513,10.1551,4.0513a9.1032,9.1032,0,0,0,6.58-3.2722c1.87-2.4924.9381-6.0023-.0518-7.739A7.7644,7.7644,0,0,0,16.13,22.3417c-1.7552-.15-7.876-.2255-10.622-.249C4.3115,22.0824,1,22.076,1,22.076">
+                </path>
+                <line class="qodef-short-path" x1="18.3515" y1="22.8572" x2="13.4348" y2="28.3773"></line>
+                <line class="qodef-short-path" x1="15.2898" y1="22.2892" x2="12.0669" y2="18.4049"></line>
+                <line class="qodef-short-path" x1="8.7737" y1="21.8364" x2="3.4352" y2="17.0026"></line>
+                <line class="qodef-short-path" x1="10.5334" y1="22.2892" x2="1" y2="28.0657"></line>
+                <path class="qodef-long-path"
+                    d="M23.2884,29.5116s.6914-6.1128-2.1629-8.8961c-1.923-1.8751-4.5672-4.7069-5.8357-5.8539-1.8-1.6274-7.1916-5.6539-7.1916-5.6539">
+                </path>
+                <line class="qodef-short-path" x1="13.6783" y1="13.4096" x2="5.7667" y2="12.8994"></line>
+                <line class="qodef-short-path" x1="16.4917" y1="15.7041" x2="15.2898" y2="3.7061"></line>
+                <line class="qodef-short-path" x1="15.8565" y1="9.3636" x2="20.7549" y2="2.1479"></line>
+                <path class="qodef-long-path"
+                    d="M51.3092,34.4369a5.1025,5.1025,0,0,0-5.25-1.4543c-2.1.6046-6.2986,4.245-9.5334,3.9647-7.3918-.6406-6.6735-9.2727-5.4049-11.77,1.4672-2.8882,3.48-4.4688,5.3358-4.83a13.9761,13.9761,0,0,1,8.3244.6548C47.2333,21.7637,52,25.6172,52,25.6172">
+                </path>
+                <line class="qodef-short-path" x1="35.2821" y1="20.7329" x2="45.7048" y2="10.2678"></line>
+                <line class="qodef-short-path" x1="38.7963" y1="20.0405" x2="48.9604" y2="18.4049"></line>
+                <line class="qodef-short-path" x1="40.0488" y1="20.0405" x2="43.8783" y2="26.8191"></line>
+                <path class="qodef-short-path"
+                    d="M30.3669,28.233s.4538-4.47-.5423-5.9438c-1.052-1.5563-7.3206-8.88-7.3206-8.88l-.8687-5.9119">
+                </path>
+                <line class="qodef-short-path" x1="34.7168" y1="20.7329" x2="34.0386" y2="12.4146"></line>
+                <line class="qodef-short-path" x1="42.1872" y1="13.7996" x2="47.6478" y2="13.7996"></line>
+                <line class="qodef-short-path" x1="40.0488" y1="15.7041" x2="41.1573" y2="5.9741"></line>
+                <line class="qodef-short-path" x1="24.6814" y1="15.9728" x2="30.999" y2="1.6805"></line>
+                <line class="qodef-short-path" x1="26.1621" y1="12.8722" x2="36.9005" y2="3.7061"></line>
+                <line class="qodef-short-path" x1="27.1891" y1="10.2997" x2="25.9194" y2="1"></line>
+            </svg>
+        </div>
+    </div>
+
+    <!-- PHASE 2: UNIVERSAL HEADER -->
+    <header class="site-header">
+        <!-- Sticky frosted glass nav -->
+        <div class="nav-bar">
+            <div class="container nav-inner">
+                <a href="index.html" class="logo">
+                    <img src="assets/downloaded img/tblogo.png" alt="Team Bangladesh Logo"
+                        style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                    <span class="logo-text">TEAM BANGLADESH</span>
+                </a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li class="has-dropdown">
+                            <a href="#about">About us <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 10px; margin-left: 5px;"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="mission.html">Our Mission and Vision</a></li>
+                                <li><a href="#activities">How We Work</a></li>
+                                <li><a href="committees.html">Our Committees</a></li>
+                                <li><a href="#activities">Our Working Arenas</a></li>
+                                <li><a href="#projects">Partners</a></li>
+                                <li><a href="#" class="contact-trigger-btn">Contact Us</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="campaigns.html">Campaigns</a></li>
+                        <li class="has-dropdown">
+                            <a href="#more">More <i class="fa-solid fa-chevron-down"
+                                    style="font-size: 10px; margin-left: 5px;"></i></a>
+                            <ul class="dropdown">
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-trigger">
+                                        <span>Monthly Recognition</span>
+                                        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+                                    </a>
+                                    <ul class="sub-dropdown">
+                                        <li><a href="#">Green Club / Society</a></li>
+                                        <li><a href="#">Great Volunteer</a></li>
+                                        <li><a href="#">Great Leader</a></li>
+                                        <li><a href="#">Best District Committee</a></li>
+                                        <li><a href="#">Best Thana Committee</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="campaigns.html">Campaigns</a></li>
+                                <li><a href="committees.html">Our Committees</a></li>
+                                <li><a href="#">Photo Gallery</a></li>
+                                <li><a href="#">Video Gallery</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Join with us (volunteer)</a></li>
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Donation</a></li>
+                            </ul>
+                        </li>
+                        <li class="donate-item" style="margin-left: 30px;"><a href="#donate"
+                                class="btn-donate">Donate</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- PHASE 3: HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-slides">
+                <!-- Slide 1 -->
+                <div class="slide active">
+                    <div class="slide-bg" style="background-image: url('assets/downloaded img/tb.jpeg');"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="container slide-content">
+                        <span class="handwriting fade-in-up">Let's build a greener future</span>
+                        <h1 class="fade-in-up delay-1">Pollution-free Green Earth,<br>Healthy Life</h1>
+                        <div class="hero-btns fade-in-up delay-2">
+                            <a href="#about" class="btn btn-primary">Discover More</a>
+                            <a href="#activities" class="btn btn-outline">Our Activities</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <div class="slide-bg" style="background-image: url('assets/downloaded img/slide_img2.jpeg');"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="container slide-content">
+                        <span class="handwriting fade-in-up">Protecting the ecology</span>
+                        <h1 class="fade-in-up delay-1">Sustainable Growth for<br>Future Generations</h1>
+                        <div class="hero-btns fade-in-up delay-2">
+                            <a href="#about" class="btn btn-primary">Discover More</a>
+                            <a href="#activities" class="btn btn-outline">Our Activities</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <div class="slide-bg" style="background-image: url('assets/downloaded img/slide_img3.jpeg');"></div>
+                    <div class="slide-overlay"></div>
+                    <div class="container slide-content">
+                        <span class="handwriting fade-in-up">A noble purpose</span>
+                        <h1 class="fade-in-up delay-1">Working Together for<br>Nature & People</h1>
+                        <div class="hero-btns fade-in-up delay-2">
+                            <a href="#about" class="btn btn-primary">Discover More</a>
+                            <a href="#activities" class="btn btn-outline">Our Activities</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shape Divider -->
+            <div class="hero-shape">
+                <img src="assets/images/earthcare/h6-rev-shape.png" alt="shape">
+            </div>
+        </section>
+
+        <!-- PHASE 4: ABOUT & COUNTER STATS -->
+        <section id="about" class="about-section pt-120 pb-120">
+            <div class="container">
+                <div class="row align-center">
+                    <div class="col-6 about-image-wrapper">
+                        <div class="image-box">
+                            <img src="assets/downloaded img/tblogo.png" alt="About Team Bangladesh"
+                                class="main-img reveal-left">
+                            <div class="float-badge reveal-up">
+                                <div class="badge-icon"><i class="fa-solid fa-leaf"></i></div>
+                                <h4>Since 2026</h4>
+                                <p>Working for Bangladesh</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 about-content pl-50">
+                        <span class="section-subtitle reveal-up">Who We Are</span>
+                        <h2 class="section-title reveal-up">Team Bangladesh</h2>
+                        <div class="registered-tag reveal-up">Registered under Social Welfare of Bangladesh</div>
+                        <p class="section-desc reveal-up">Team Bangladesh is a reputed, registered organization working
+                            for a long time with the goal of building a green, pollution-free, clean, livable,
+                            developed, and humane Bangladesh.</p>
+                        <p class="section-desc reveal-up">We work together with this pure belief - for the noble purpose
+                            of gifting a sustainable, safe, and better future for the next generations.</p>
+
+                        <div class="counter-grid mt-40 reveal-up">
+                            <div class="counter-item">
+                                <div class="counter-number">24+</div>
+                                <div class="counter-text">Years of Impact</div>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-number">50k+</div>
+                                <div class="counter-text">Trees Planted</div>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-number">12k+</div>
+                                <div class="counter-text">Families Helped</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASE 5: ACTIVITIES -->
+        <section id="activities" class="activities-section bg-light pt-120 pb-120">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal-up">Our Key Initiatives</span>
+                    <h2 class="section-title reveal-up">Key Areas of Action</h2>
+                </div>
+
+                <div class="grid-4 activities-grid">
+                    <!-- Item 1 -->
+                    <div class="activity-card reveal-up">
+                        <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h3>Tree Planting</h3>
+                        <p>Biodiversity conservation and mass plantation across regions.</p>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="activity-card reveal-up delay-1">
+                        <div class="card-icon"><i class="fa-solid fa-paw"></i></div>
+                        <h3>Animal Care</h3>
+                        <p>Ensuring welfare, rescue, and care for street and wild animals.</p>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="activity-card reveal-up delay-2">
+                        <div class="card-icon"><i class="fa-solid fa-house-medical"></i></div>
+                        <h3>Free Mega Medical Camp</h3>
+                        <p>Providing essential free medical services to underprivileged communities.</p>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="activity-card reveal-up delay-3">
+                        <div class="card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                        <h3>Educational Development</h3>
+                        <p>Empowering children through widespread national education improvement.</p>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="activity-card reveal-up">
+                        <div class="card-icon"><i class="fa-solid fa-city"></i></div>
+                        <h3>Green City</h3>
+                        <p>Clean city initiatives for better, pollution-free urban life.</p>
+                    </div>
+                    <!-- Item 6 -->
+                    <div class="activity-card reveal-up delay-1">
+                        <div class="card-icon"><i class="fa-solid fa-recycle"></i></div>
+                        <h3>Waste Recycling</h3>
+                        <p>Effective waste removal and management systems.</p>
+                    </div>
+                    <!-- Item 7 -->
+                    <div class="activity-card reveal-up delay-2">
+                        <div class="card-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+                        <h3>Climate Change</h3>
+                        <p>Disaster management and climate resilience building.</p>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="activity-card reveal-up delay-3">
+                        <div class="card-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                        <h3>Water & Sanitation</h3>
+                        <p>River development and clean drinking water access.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ONGOING PROJECTS -->
+        <section id="projects" class="projects-section pt-120 pb-120">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal-up">What We Are Doing Now</span>
+                    <h2 class="section-title reveal-up">Our Ongoing Projects</h2>
+                </div>
+                <div class="row mt-50">
+                    <div class="col-4 reveal-up">
+                        <div class="panel-img text-center">
+                            <!-- Fixed to perfectly equal 3/2 aspect ratio rectangle -->
+                            <img src="assets/downloaded img/slide_img1.jpeg" alt="Tree Plant"
+                                class="premium-rounded-img" style="width: 100%; aspect-ratio: 3/2; object-fit: cover;">
+                            <h3 class="mt-20">Tree Plant</h3>
+                        </div>
+                    </div>
+                    <div class="col-4 reveal-up delay-1">
+                        <div class="panel-img text-center">
+                            <!-- Fixed to perfectly equal 3/2 aspect ratio rectangle -->
+                            <img src="assets/downloaded img/animal.jpeg" alt="Animal Care" class="premium-rounded-img"
+                                style="width: 100%; aspect-ratio: 3/2; object-fit: cover;">
+                            <h3 class="mt-20">Animal care</h3>
+                        </div>
+                    </div>
+                    <div class="col-4 reveal-up delay-2">
+                        <div class="panel-img text-center">
+                            <!-- Fixed to perfectly equal 3/2 aspect ratio rectangle -->
+                            <img src="assets/downloaded img/med.png" alt="Free Mega Medical Camp"
+                                class="premium-rounded-img" style="width: 100%; aspect-ratio: 3/2; object-fit: cover;">
+                            <h3 class="mt-20">Free mega medical camp</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASE 5.5: LEADERSHIP / OUR EXECUTIVE TEAM -->
+        <section id="executive-team" class="leadership-section pt-120 pb-120">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal-up">Leadership</span>
+                    <h2 class="section-title reveal-up">Our Executive Team</h2>
+                </div>
+
+                <div class="team-carousel mt-50 reveal-up">
+                    <div class="team-slides-wrapper">
+                        <!-- Member 1 -->
+                        <div class="team-slide active">
+                            <div class="row align-center">
+                                <div class="col-6 panel-img">
+                                    <img src="assets/downloaded img/precident.jpeg" alt="General Secretary"
+                                        class="premium-rounded-img" style="object-fit: contain; background: #fff;">
+                                </div>
+                                <div class="col-6 panel-text pl-50">
+                                    <h2 class="leader-name">Dr Muhit A Rana</h2>
+                                    <h4 class="leader-designation">General Secretary</h4>
+                                    <h5 class="leader-designation">Team Bangladesh</h5>
+                                    <p class="section-desc">Organizing the core operations of Team Bangladesh, ensuring
+                                        that our
+                                        environmental and social policies translate into actionable community goals.</p>
+                                    <div class="leader-socials">
+                                        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="https://www.facebook.com/muhitrana" target="_blank" title="Facebook"><i
+                                                class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#" title="X (Twitter)"><i class="fa-brands fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Member 2 -->
+                        <div class="team-slide">
+                            <div class="row align-center">
+                                <div class="col-6 panel-img">
+                                    <img src="assets/downloaded img/aruni.jpeg" alt="Vice President"
+                                        class="premium-rounded-img">
+                                </div>
+                                <div class="col-6 panel-text pl-50">
+                                    <h2 class="leader-name">Salima Talukder Aruni</h2>
+                                    <h4 class="leader-designation">Vice-president</h4>
+                                    <h5 class="leader-designation">Team Bangladesh</h5>
+                                    <p class="section-desc">Passionate about sustainability, social progress, and
+                                        helping communities
+                                        adapt to a better lifestyle through innovative programs and grassroots
+                                        engagement.</p>
+                                    <div class="leader-socials">
+                                        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="https://www.facebook.com/61581136721878/photos" target="_blank"
+                                            title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#" title="X (Twitter)"><i class="fa-brands fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Member 3 -->
+                        <div class="team-slide">
+                            <div class="row align-center">
+                                <div class="col-6 panel-img">
+                                    <img src="assets/downloaded img/tblogo.png" alt="Member" class="premium-rounded-img"
+                                        style="object-fit: contain; background: #fff;">
+                                </div>
+                                <div class="col-6 panel-text pl-50">
+                                    <h2 class="leader-name">NAHREEN ASGHAR</h2>
+                                    <h4 class="leader-designation">Member</h4>
+                                    <h5 class="leader-designation">Team Bangladesh</h5>
+                                    <p class="section-desc">Actively contributing to the strategic and humanitarian
+                                        operations of Team Bangladesh, driving progressive change within the community.
+                                    </p>
+                                    <div class="leader-socials">
+                                        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#" title="X (Twitter)"><i class="fa-brands fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Member 4 -->
+                        <div class="team-slide">
+                            <div class="row align-center">
+                                <div class="col-6 panel-img">
+                                    <img src="assets/downloaded img/tblogo.png" alt="Member" class="premium-rounded-img"
+                                        style="object-fit: contain; background: #fff;">
+                                </div>
+                                <div class="col-6 panel-text pl-50">
+                                    <h2 class="leader-name">Barister Rakeen</h2>
+                                    <h4 class="leader-designation">Member</h4>
+                                    <h5 class="leader-designation">Team Bangladesh</h5>
+                                    <p class="section-desc">Providing crucial guidance and leadership to ensure that
+                                        Team Bangladesh successfully meets its environmental and legal developmental
+                                        targets.</p>
+                                    <div class="leader-socials">
+                                        <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                                        <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                        <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                        <a href="#" title="X (Twitter)"><i class="fa-brands fa-twitter"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Arrow -->
+                    <button class="team-next-btn" onclick="nextTeamSlide()">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <!-- Slide Dots -->
+                    <div class="team-dots">
+                        <span class="team-dot active" onclick="goToTeamSlide(0)"></span>
+                        <span class="team-dot" onclick="goToTeamSlide(1)"></span>
+                        <span class="team-dot" onclick="goToTeamSlide(2)"></span>
+                        <span class="team-dot" onclick="goToTeamSlide(3)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASE 7: GUIDELINES & POLICIES -->
+        <section id="guidelines" class="guidelines-section bg-dark pt-120 pb-120">
+            <div class="container text-light">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal-up">Group Guidelines</span>
+                    <h2 class="section-title text-white reveal-up">Objectives & Policies</h2>
+                    <p class="mt-20 reveal-up">This group coordinates policy-making, planning, and implementation among
+                        honorable members.</p>
+                </div>
+
+                <div class="row mt-50">
+                    <div class="col-6 reveal-left">
+                        <div class="policy-card">
+                            <div class="policy-icon"><i class="fa-solid fa-bullseye"></i></div>
+                            <h3>Group Objective</h3>
+                            <p>This group is formed to make the coordination, policy-making, planning, and
+                                implementation of activities more dynamic and fruitful among the honorable members of
+                                various levels of this organization.</p>
+                        </div>
+                    </div>
+                    <div class="col-6 reveal-right">
+                        <div class="policy-card">
+                            <div class="policy-icon"><i class="fa-solid fa-list-check"></i></div>
+                            <h3>Organization Policies</h3>
+                            <ul class="policy-list">
+                                <li><i class="fa-solid fa-check"></i> Share only matters related to this organization.
+                                </li>
+                                <li><i class="fa-solid fa-check"></i> Maintain professionalism and mutual respect.</li>
+                                <li><i class="fa-solid fa-check"></i> Propose constructive feedback and new initiatives.
+                                </li>
+                                <li><i class="fa-solid fa-xmark text-danger"></i> Refrain from sharing misleading or
+                                    irrelevant info.</li>
+                                <li class="text-warning"><i class="fa-solid fa-triangle-exclamation"></i> Group calls
+                                    without the permission of the Honorable Chairman are strictly discouraged.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section id="testimonials" class="testimonials-section bg-light pt-120 pb-120">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-subtitle reveal-up">What People Say</span>
+                    <h2 class="section-title reveal-up">Testimonial</h2>
+                </div>
+                <div class="testimonial-carousel mt-50 reveal-up liquid-glass-carousel">
+                    <div class="testimonial-slides-wrapper">
+                        <div class="testimonial-slide active">
+                            <div class="testimonial-card frosted-glass-card">
+                                <div class="testimonial-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="testimonial-text">"Team Bangladesh has fundamentally transformed our
+                                    village. Their tree-planting initiative not only beautified our surroundings but
+                                    helped reduce the extreme summer heat. Truly a blessing!"</p>
+                                <div class="testimonial-author">
+                                    <h3>Rafiqul Islam</h3>
+                                    <span>Community Member</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card frosted-glass-card">
+                                <div class="testimonial-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="testimonial-text">"The dedication of Team Bangladesh towards educational
+                                    development is
+                                    inspiring. My students are now actively participating in campaigns thanks
+                                    to their interactive workshops."</p>
+                                <div class="testimonial-author">
+                                    <h3>Nusrat Jahan</h3>
+                                    <span>School Teacher</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card frosted-glass-card">
+                                <div class="testimonial-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="testimonial-text">"Team Bangladesh has shown phenomenal dedication to
+                                    community development. Their mega medical camps and tree planting initiatives have
+                                    inspired our corporate team to volunteer and give back."
+                                </p>
+                                <div class="testimonial-author">
+                                    <h3>Tariq Mahmud</h3>
+                                    <span>Corporate Professional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-dots text-center mt-30">
+                        <span class="testimonial-dot active" onclick="goToTestimonialSlide(0)"></span>
+                        <span class="testimonial-dot" onclick="goToTestimonialSlide(1)"></span>
+                        <span class="testimonial-dot" onclick="goToTestimonialSlide(2)"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHASE 8: NEWSLETTER CTA -->
+        <section class="cta-section pt-80 pb-80">
+            <div class="container">
+                <div class="cta-inner reveal-up">
+                    <div class="cta-content">
+                        <h2>Let’s build a greener, cleaner and healthier Bangladesh - together.</h2>
+                    </div>
+                    <div class="cta-action">
+                        <a href="#" class="btn btn-dark btn-double-line">
+                            <span class="cta-line-top">Join Us Today</span>
+                            <span class="cta-line-bottom">VOLUNTEER</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- PHASE 9: FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-left-top">
+                    <div class="footer-logo-area">
+                        <a href="index.html" class="logo footer-logo">
+                            <img src="assets/downloaded img/tblogo.png" alt="Team Bangladesh Logo"
+                                style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <span class="logo-text text-white">TeamBD</span>
+                        </a>
+                        <p style="color: var(--color-secondary); font-style: italic; margin-top: 5px;">... because
+                            Bangladesh First.</p>
+                    </div>
+
+                    <div class="footer-follow-section">
+                        <p class="follow-text">Follow us</p>
+                        <div class="footer-socials">
+                            <a href="https://www.facebook.com/groups/895660733312485/?ref=share&mibextid=NSMWBT"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="footer-company-info desktop-only">
+                    <p class="copyright">&copy; 2026 Team Bangladesh. All Rights Reserved. <br> Design and
+                        Developed by CEEDtech</p>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div class="footer-menus">
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Quick Links <i
+                                class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#activities">Our Activities</a></li>
+                            <li><a href="#guidelines">Organization Policies</a></li>
+                            <li><a href="#donate">Donation</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Help <i class="fa-solid fa-chevron-down mobile-only"></i>
+                        </h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#" class="contact-trigger-btn">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Contact Info <i
+                                class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content contact-list">
+                            <li><a href="#"><i class="fa-solid fa-location-dot"></i> Bangladesh</a></li>
+                            <li><a href="mailto:info@teambangladesh.org"><i class="fa-solid fa-envelope"></i>
+                                    info@teambangladesh.org</a></li>
+                            <li><a href="tel:+8801911480021"><i class="fa-solid fa-phone"></i> +880 1911-480021</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Legal <i
+                                class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-company-info mobile-only">
+                <hr class="mobile-footer-divider">
+                <p class="copyright">&copy; 2026 Team Bangladesh. All Rights Reserved. <br> Design and
+                    Developed by CEEDtech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PHASE 10: NEWSLETTER POPUP -->
+    <div class="newsletter-popup">
+        <button class="close-popup"><i class="fa-solid fa-xmark"></i></button>
+        <div class="popup-bg" style="background-image: url('assets/downloaded img/slide_img3.jpeg');"></div>
+        <div class="popup-content">
+            <span class="handwriting">For causes that</span>
+            <h2>Really Matter</h2>
+            <form class="popup-form" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Email" required>
+                <button type="submit" class="btn-white">SIGN UP</button>
+            </form>
+            <label class="do-not-show">
+                <input type="checkbox"> Do not show this pop-up again
+            </label>
+        </div>
+    </div>
+
+    <!-- CONTACT US POPUP -->
+    <div id="contact-popup" class="contact-popup-wrapper">
+        <div class="contact-popup-content">
+            <button class="close-contact-popup"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="contact-title">Contact Us</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>Hotline</h4>
+                        <p>+880 1911-480021</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>+880 1911-480021</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <p>info@teambangladesh.org</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Address</h4>
+                        <p>Banani, Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

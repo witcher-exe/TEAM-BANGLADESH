@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission & Vision | Team Bangladesh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Rock+Salt&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Tailwind CSS (No-Preflight so it doesn't break your style.css) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { corePlugins: { preflight: false } }
+    </script>
+    <style>
+        /* Lovable Custom Design Tokens */
+        .gradient-leaf { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .gradient-warm { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #0f172a; }
+        .bg-ink { background-color: #0f172a; color: white; }
+        .bg-card { background-color: #ffffff; }
+        .bg-muted { background-color: #f8fafc; }
+        .text-leaf { color: #10b981; }
+        .text-amber-glow { color: #f59e0b; }
+        .text-ink { color: #0f172a; }
+        .blob { filter: blur(60px); opacity: 0.6; z-index: 0; animation: floatBlob 6s infinite ease-in-out alternate; }
+        @keyframes floatBlob { from { transform: scale(1) translateY(0); } to { transform: scale(1.1) translateY(-20px); } }
+        .glass-panel { background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); }
+    </style>
+</head>
+<body>
+
+    <!-- PRELOADER -->
+    <div id="splash-screen" class="preloader-wrapper">
+        <div class="preloader-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" class="qodef-svg--animated-logo-loader" width="106" height="108" viewBox="0 0 53 54">
+                <path class="qodef-short-path" d="M22.504,53s2.1222-1.7174,3.874-1.7174c1.875,0,3.9475,1.7174,3.9475,1.7174"></path>
+                <path class="qodef-long-path" d="M8.2536,45.777s3.177,2.8731,5.8029,3.1683c5.5439.6233,9.5334-3.48,12.3214-3.48,3.2221,0,6.42,3.5853,10.942,3.48,2.5639-.06,5.9065-1.2985,7.4609-3.0125"></path>
+                <path class="qodef-long-path" d="M2.6842,39.9424a6.6641,6.6641,0,0,1,3.497-.9175c2.5906.3636,5.8916,3.8232,8.86,4.1032,4.404.4155,7.6348-4.1592,11.337-4.2,4.1547-.0454,6.21,4.5112,10.9938,4.2032,3.5406-.228,6.4189-4.2166,9.1189-4.2483a5.2889,5.2889,0,0,1,2.85.8166"></path>
+                <path class="qodef-long-path" d="M1,34.2464a11.8873,11.8873,0,0,1,4.5076-1.35c3.742-.1375,6.9428,4.0513,10.1551,4.0513a9.1032,9.1032,0,0,0,6.58-3.2722c1.87-2.4924.9381-6.0023-.0518-7.739A7.7644,7.7644,0,0,0,16.13,22.3417c-1.7552-.15-7.876-.2255-10.622-.249C4.3115,22.0824,1,22.076,1,22.076"></path>
+                <line class="qodef-short-path" x1="18.3515" y1="22.8572" x2="13.4348" y2="28.3773"></line>
+                <line class="qodef-short-path" x1="15.2898" y1="22.2892" x2="12.0669" y2="18.4049"></line>
+                <line class="qodef-short-path" x1="8.7737" y1="21.8364" x2="3.4352" y2="17.0026"></line>
+                <line class="qodef-short-path" x1="10.5334" y1="22.2892" x2="1" y2="28.0657"></line>
+                <path class="qodef-long-path" d="M23.2884,29.5116s.6914-6.1128-2.1629-8.8961c-1.923-1.8751-4.5672-4.7069-5.8357-5.8539-1.8-1.6274-7.1916-5.6539-7.1916-5.6539"></path>
+                <line class="qodef-short-path" x1="13.6783" y1="13.4096" x2="5.7667" y2="12.8994"></line>
+                <line class="qodef-short-path" x1="16.4917" y1="15.7041" x2="15.2898" y2="3.7061"></line>
+                <line class="qodef-short-path" x1="15.8565" y1="9.3636" x2="20.7549" y2="2.1479"></line>
+                <path class="qodef-long-path" d="M51.3092,34.4369a5.1025,5.1025,0,0,0-5.25-1.4543c-2.1.6046-6.2986,4.245-9.5334,3.9647-7.3918-.6406-6.6735-9.2727-5.4049-11.77,1.4672-2.8882,3.48-4.4688,5.3358-4.83a13.9761,13.9761,0,0,1,8.3244.6548C47.2333,21.7637,52,25.6172,52,25.6172"></path>
+                <line class="qodef-short-path" x1="35.2821" y1="20.7329" x2="45.7048" y2="10.2678"></line>
+                <line class="qodef-short-path" x1="38.7963" y1="20.0405" x2="48.9604" y2="18.4049"></line>
+                <line class="qodef-short-path" x1="40.0488" y1="20.0405" x2="43.8783" y2="26.8191"></line>
+                <path class="qodef-short-path" d="M30.3669,28.233s.4538-4.47-.5423-5.9438c-1.052-1.5563-7.3206-8.88-7.3206-8.88l-.8687-5.9119"></path>
+                <line class="qodef-short-path" x1="34.7168" y1="20.7329" x2="34.0386" y2="12.4146"></line>
+                <line class="qodef-short-path" x1="42.1872" y1="13.7996" x2="47.6478" y2="13.7996"></line>
+                <line class="qodef-short-path" x1="40.0488" y1="15.7041" x2="41.1573" y2="5.9741"></line>
+                <line class="qodef-short-path" x1="24.6814" y1="15.9728" x2="30.999" y2="1.6805"></line>
+                <line class="qodef-short-path" x1="26.1621" y1="12.8722" x2="36.9005" y2="3.7061"></line>
+                <line class="qodef-short-path" x1="27.1891" y1="10.2997" x2="25.9194" y2="1"></line>
+            </svg>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="nav-bar">
+            <div class="container nav-inner">
+                <a href="index.html" class="logo">
+                    <img src="assets/downloaded img/tblogo.png" alt="Team Bangladesh Logo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                    <span class="logo-text">TEAM BANGLADESH</span>
+                </a>
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li class="has-dropdown">
+                            <a href="index.html#about">About us <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+                            <ul class="dropdown">
+                                <li><a href="mission.html">Our Mission and Vision</a></li>
+                                <li><a href="index.html#activities">How We Work</a></li>
+                                <li><a href="committees.html">Our Committees</a></li>
+                                <li><a href="index.html#activities">Our Working Arenas</a></li>
+                                <li><a href="index.html#projects">Partners</a></li>
+                                <li><a href="#" class="contact-trigger-btn">Contact Us</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="campaigns.html">Campaigns</a></li>
+                        <li class="has-dropdown">
+                            <a href="#more">More <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 5px;"></i></a>
+                            <ul class="dropdown">
+                                <li class="has-sub-dropdown">
+                                    <a href="#" class="sub-dropdown-trigger"><span>Monthly Recognition</span><i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i></a>
+                                    <ul class="sub-dropdown">
+                                        <li><a href="#">Green Club / Society</a></li>
+                                        <li><a href="#">Great Volunteer</a></li>
+                                        <li><a href="#">Great Leader</a></li>
+                                        <li><a href="#">Best District Committee</a></li>
+                                        <li><a href="#">Best Thana Committee</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="campaigns.html">Campaigns</a></li>
+                                <li><a href="committees.html">Our Committees</a></li>
+                                <li><a href="#">Photo Gallery</a></li>
+                                <li><a href="#">Video Gallery</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Join with us (volunteer)</a></li>
+                                <li><a href="#">Products</a></li>
+                                <li><a href="#">Donation</a></li>
+                            </ul>
+                        </li>
+                        <li class="donate-item" style="margin-left: 30px;"><a href="index.html#donate" class="btn-donate">Donate</a></li>
+                    </ul>
+                </nav>
+                <div class="nav-actions">
+                    <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="font-[Outfit]">
+        <!-- HERO -->
+        <section class="relative pt-[180px] pb-[120px]" style="background: linear-gradient(rgba(15,23,42,0.8), rgba(15,23,42,0.8)), url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1920&q=80') center/cover;">
+            <div class="max-w-7xl mx-auto px-5 relative z-10 text-center text-white">
+                <span class="text-amber-glow font-bold uppercase tracking-wider text-sm mb-4 block reveal-up">Because Bangladesh First</span>
+                <h1 class="text-5xl lg:text-6xl font-bold mb-6 reveal-up delay-1 text-white">Our Mission & Vision</h1>
+                <p class="max-w-2xl mx-auto text-lg text-white/80 mb-10 reveal-up delay-2">A pollution-free, green and radically developed Bangladesh where urban and rural spaces coexist with nature — for every generation to come.</p>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 reveal-up delay-3 border-t border-white/20 pt-8 max-w-4xl mx-auto">
+                    <div>
+                        <div class="text-3xl font-bold text-leaf mb-1">64</div>
+                        <div class="text-xs uppercase tracking-wider text-white/60">Districts</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-leaf mb-1">10K+</div>
+                        <div class="text-xs uppercase tracking-wider text-white/60">Volunteers</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-leaf mb-1">120K</div>
+                        <div class="text-xs uppercase tracking-wider text-white/60">Trees Planted</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold text-leaf mb-1">5,400</div>
+                        <div class="text-xs uppercase tracking-wider text-white/60">Animals Saved</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VISION -->
+        <section class="max-w-7xl mx-auto px-5 py-24 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="relative reveal-up">
+                <div class="aspect-[4/5] rounded-[2rem] overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=900&q=80" alt="A greener Bangladesh" class="h-full w-full object-cover">
+                </div>
+                <div class="absolute -bottom-8 -right-8 h-36 w-36 rounded-full gradient-leaf text-white flex flex-col items-center justify-center shadow-2xl blob">
+                    <i class="fa-solid fa-eye text-3xl"></i>
+                    <div class="font-bold mt-1">Vision</div>
+                </div>
+            </div>
+            <div class="reveal-up delay-1">
+                <div class="font-[Rock Salt] text-leaf text-lg">Looking at the horizon</div>
+                <h2 class="text-4xl lg:text-5xl font-bold mt-2">A Greener, Thriving Bangladesh.</h2>
+                <p class="mt-5 text-[#64748b] text-lg leading-relaxed">We envision a future where every river runs clean, every street is shaded by a tree, and every citizen — human or animal — lives with dignity. A nation that grows without trading its forests for skylines.</p>
+                <ul class="mt-8 space-y-4">
+                    <li class="flex items-center gap-3"><span class="h-7 w-7 rounded-full bg-[#10b9811a] text-leaf flex items-center justify-center"><i class="fa-solid fa-check text-sm"></i></span> Sustainable Ecological Balance</li>
+                    <li class="flex items-center gap-3"><span class="h-7 w-7 rounded-full bg-[#10b9811a] text-leaf flex items-center justify-center"><i class="fa-solid fa-check text-sm"></i></span> Clean, Livable Cities</li>
+                    <li class="flex items-center gap-3"><span class="h-7 w-7 rounded-full bg-[#10b9811a] text-leaf flex items-center justify-center"><i class="fa-solid fa-check text-sm"></i></span> A Humane, Empowered Society</li>
+                    <li class="flex items-center gap-3"><span class="h-7 w-7 rounded-full bg-[#10b9811a] text-leaf flex items-center justify-center"><i class="fa-solid fa-check text-sm"></i></span> Zero-waste Urban Models</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- MISSION -->
+        <section class="bg-muted py-24">
+            <div class="max-w-7xl mx-auto px-5 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="lg:order-2 relative reveal-up">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=900&q=80" alt="Mission in action" class="h-full w-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 h-36 w-36 rounded-full gradient-warm text-ink flex flex-col items-center justify-center shadow-2xl blob">
+                        <i class="fa-solid fa-bullseye text-3xl"></i>
+                        <div class="font-bold mt-1">Mission</div>
+                    </div>
+                </div>
+                <div class="lg:order-1 reveal-up delay-1">
+                    <div class="font-[Rock Salt] text-leaf text-lg">What drives us every day</div>
+                    <h2 class="text-4xl lg:text-5xl font-bold mt-2">Executing the change, one field at a time.</h2>
+                    <p class="mt-5 text-[#64748b] text-lg leading-relaxed">We turn intention into action through grounded field projects — conservation, animal welfare, humanitarian aid and rural education — led by volunteers who refuse to wait for someone else to begin.</p>
+                    <a href="campaigns.html" class="mt-8 inline-flex items-center gap-2 rounded-full gradient-leaf text-white px-6 py-3 font-semibold hover:-translate-y-1 transition duration-300 shadow-xl shadow-green-500/30">
+                        See our action plan <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUES -->
+        <section class="max-w-7xl mx-auto px-5 py-24">
+            <div class="text-center reveal-up">
+                <div class="font-[Rock Salt] text-leaf text-lg">Core values</div>
+                <h2 class="text-4xl lg:text-5xl font-bold mt-2">The compass we navigate by.</h2>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-14">
+                <div class="rounded-3xl bg-card border border-[#e2e8f0] p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 reveal-up">
+                    <div class="h-12 w-12 rounded-2xl gradient-leaf text-white flex items-center justify-center text-xl"><i class="fa-solid fa-leaf"></i></div>
+                    <h3 class="mt-5 text-xl font-bold">Sustainability</h3>
+                    <p class="text-sm text-[#64748b] mt-2">Ecological balance in every initiative.</p>
+                </div>
+                <div class="rounded-3xl bg-card border border-[#e2e8f0] p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 reveal-up delay-1">
+                    <div class="h-12 w-12 rounded-2xl gradient-leaf text-white flex items-center justify-center text-xl"><i class="fa-solid fa-globe"></i></div>
+                    <h3 class="mt-5 text-xl font-bold">Nation-first</h3>
+                    <p class="text-sm text-[#64748b] mt-2">From metropolis to remote upazila.</p>
+                </div>
+                <div class="rounded-3xl bg-card border border-[#e2e8f0] p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 reveal-up delay-2">
+                    <div class="h-12 w-12 rounded-2xl gradient-leaf text-white flex items-center justify-center text-xl"><i class="fa-solid fa-users"></i></div>
+                    <h3 class="mt-5 text-xl font-bold">Volunteer-led</h3>
+                    <p class="text-sm text-[#64748b] mt-2">Powered by 10,000+ everyday citizens.</p>
+                </div>
+                <div class="rounded-3xl bg-card border border-[#e2e8f0] p-6 hover:shadow-xl hover:-translate-y-1 transition duration-300 reveal-up delay-3">
+                    <div class="h-12 w-12 rounded-2xl gradient-leaf text-white flex items-center justify-center text-xl"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3 class="mt-5 text-xl font-bold">Humanity</h3>
+                    <p class="text-sm text-[#64748b] mt-2">Dignity for people and animals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SDG -->
+        <section class="max-w-7xl mx-auto px-5 pb-24">
+            <div class="rounded-[2rem] gradient-leaf text-white p-10 lg:p-14 relative overflow-hidden reveal-up">
+                <div class="absolute -top-20 -right-10 h-72 w-72 rounded-full bg-white/20 blob"></div>
+                <div class="relative grid lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <div class="font-[Rock Salt] text-amber-glow text-lg">Aligned with the world</div>
+                        <h2 class="text-3xl lg:text-4xl font-bold mt-2 text-white">UN Sustainable Development Goals</h2>
+                        <p class="mt-4 text-white/80 max-w-md">Our four pillars directly contribute to seven of the seventeen SDGs.</p>
+                    </div>
+                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-3">
+                        <div class="aspect-square rounded-2xl glass-panel flex items-center justify-center font-bold text-xl">3</div>
+                        <div class="aspect-square rounded-2xl glass-panel flex items-center justify-center font-bold text-xl">4</div>
+                        <div class="aspect-square rounded-2xl glass-panel flex items-center justify-center font-bold text-xl">6</div>
+                        <div class="aspect-square rounded-2xl glass-panel flex items-center justify-center font-bold text-xl">11</div>
+                        <div class="aspect-square rounded-2xl glass-panel flex items-center justify-center font-bold text-xl">13</div>
+                        <div class="aspect-square rounded-2xl glass-panel flex items-center justify-center font-bold text-xl">14</div>
+                        <div class="aspect-square rounded-2xl glass-panel flex items-center justify-center font-bold text-xl">15</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-left-top">
+                    <div class="footer-logo-area">
+                        <a href="index.html" class="logo footer-logo">
+                            <img src="assets/downloaded img/tblogo.png" alt="Team Bangladesh Logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <span class="logo-text text-white">TeamBD</span>
+                        </a>
+                        <p style="color: var(--color-secondary); font-style: italic; margin-top: 5px;">... because Bangladesh First.</p>
+                    </div>
+                    <div class="footer-follow-section">
+                        <p class="follow-text">Follow us</p>
+                        <div class="footer-socials">
+                            <a href="https://www.facebook.com/groups/895660733312485/?ref=share&mibextid=NSMWBT"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-company-info desktop-only">
+                    <p class="copyright">&copy; 2026 Team Bangladesh. All Rights Reserved. <br> Design and Developed by CEEDtech</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-menus">
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Quick Links <i class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="index.html#about">About Us</a></li>
+                            <li><a href="index.html#activities">Our Activities</a></li>
+                            <li><a href="index.html#guidelines">Organization Policies</a></li>
+                            <li><a href="index.html#donate">Donation</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Help <i class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#" class="contact-trigger-btn">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Contact Info <i class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content contact-list">
+                            <li><a href="#"><i class="fa-solid fa-location-dot"></i> Bangladesh</a></li>
+                            <li><a href="mailto:info@teambangladesh.org"><i class="fa-solid fa-envelope"></i> info@teambangladesh.org</a></li>
+                            <li><a href="tel:+8801911480021"><i class="fa-solid fa-phone"></i> +880 1911-480021</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Legal <i class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-company-info mobile-only">
+                <hr class="mobile-footer-divider">
+                <p class="copyright">&copy; 2026 Team Bangladesh. All Rights Reserved. <br> Design and Developed by CEEDtech</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUPS -->
+    <div class="newsletter-popup">
+        <button class="close-popup"><i class="fa-solid fa-xmark"></i></button>
+        <div class="popup-bg" style="background-image: url('assets/downloaded img/slide_img3.jpeg');"></div>
+        <div class="popup-content">
+            <span class="handwriting">For causes that</span>
+            <h2>Really Matter</h2>
+            <form class="popup-form" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Email" required>
+                <button type="submit" class="btn-white">SIGN UP</button>
+            </form>
+            <label class="do-not-show"><input type="checkbox"> Do not show this pop-up again</label>
+        </div>
+    </div>
+    <div id="contact-popup" class="contact-popup-wrapper">
+        <div class="contact-popup-content">
+            <button class="close-contact-popup"><i class="fa-solid fa-xmark"></i></button>
+            <h2 class="contact-title">Contact Us</h2>
+            <div class="contact-details">
+                <div class="contact-item"><i class="fa-solid fa-phone"></i><div><h4>Hotline</h4><p>+880 1911-480021</p></div></div>
+                <div class="contact-item"><i class="fa-brands fa-whatsapp"></i><div><h4>WhatsApp</h4><p>+880 1911-480021</p></div></div>
+                <div class="contact-item"><i class="fa-solid fa-envelope"></i><div><h4>Email Address</h4><p>info@teambangladesh.org</p></div></div>
+                <div class="contact-item"><i class="fa-solid fa-location-dot"></i><div><h4>Address</h4><p>Banani, Dhaka, Bangladesh</p></div></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
