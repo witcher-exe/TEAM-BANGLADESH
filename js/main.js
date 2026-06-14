@@ -10,22 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const removePreloader = () => {
         if(preloader) {
             if(splashLogo && navLogo && !hasSeenSplash) {
-                preloader.style.backgroundColor = 'transparent';
                 navLogo.style.display = 'block';
                 
                 const targetRect = navLogo.getBoundingClientRect();
                 const startRect = splashLogo.getBoundingClientRect();
                 
+                // Detach logo from preloader and pin it fixed on screen
                 splashLogo.style.position = 'fixed';
                 splashLogo.style.left = startRect.left + 'px';
                 splashLogo.style.top = startRect.top + 'px';
                 splashLogo.style.width = startRect.width + 'px';
                 splashLogo.style.height = startRect.height + 'px';
                 splashLogo.style.margin = '0';
-                splashLogo.style.animation = 'none';
+                splashLogo.style.zIndex = '10000';
+                document.body.appendChild(splashLogo); // move outside preloader so bg fade doesn't affect it
                 
                 void splashLogo.offsetWidth; // trigger reflow
                 
+                // Start fading out the white background smoothly
+                preloader.style.transition = 'opacity 1s ease';
+                preloader.style.opacity = '0';
+
+                // Simultaneously morph the logo to the nav
                 splashLogo.style.transition = 'all 1s cubic-bezier(0.25, 0.1, 0.25, 1)';
                 splashLogo.style.left = targetRect.left + 'px';
                 splashLogo.style.top = targetRect.top + 'px';
@@ -37,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     navLogo.style.opacity = '1';
                     preloader.style.display = 'none';
                     sessionStorage.setItem('splashShown', 'true');
-                }, 1000);
+                }, 1100);
             } else {
                 if(navLogo) {
                     navLogo.style.display = 'block';
@@ -57,23 +63,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const splash3 = document.getElementById('splash-img-3');
         
         if(splash1 && splash2 && splash3 && splashLogo) {
-            setTimeout(() => {
-                splash1.style.opacity = '1';
-            }, 500);
-            setTimeout(() => {
-                splash2.style.opacity = '1';
-            }, 1500);
-            setTimeout(() => {
-                splash3.style.opacity = '1';
-            }, 2500);
+            // img1 starts at 200ms, fades in 1s → done at 1200ms
+            setTimeout(() => { splash1.style.opacity = '1'; }, 200);
+            // img2 starts at 1000ms, fades in 1s → done at 2000ms  
+            setTimeout(() => { splash2.style.opacity = '1'; }, 1000);
+            // img3 starts at 2000ms, fades in 1s → done at 3000ms
+            setTimeout(() => { splash3.style.opacity = '1'; }, 2000);
             
+            // 4th pops instantly right when img3 is fully visible (3000ms)
             setTimeout(() => {
                 splashLogo.style.opacity = '1';
                 splash1.style.display = 'none';
                 splash2.style.display = 'none';
                 splash3.style.display = 'none';
-                removePreloader();
-            }, 3500);
+            }, 3000);
+            
+            // Start morph 100ms after 4th appears
+            setTimeout(() => { removePreloader(); }, 3100);
         } else {
             const fallbackTimer = setTimeout(removePreloader, 4000);
             window.addEventListener('load', () => {

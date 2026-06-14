@@ -1,0 +1,41 @@
+
+(function( $ ) {
+    'use strict';
+
+
+
+
+    $(window).scroll(function () {
+        if($(window).scrollTop() > 30) {
+            $(".transparent-menu").addClass('sticky');
+        } else {
+            $(".transparent-menu").removeClass('sticky');
+        }
+    });
+
+
+
+  $(document).ready(function () {
+    $(
+      ".service_list.style-2"
+    ).on("mouseenter", function () {
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+
+    $(
+      ".service_list.style-2"
+    ).on("mouseenter", function () {
+      $(this).addClass("active");
+      $(this)
+        .parent()
+        .siblings()
+        .find(
+          ".service_list.style-2"
+        )
+        .removeClass("active");
+    });
+  });
+
+
+
+ })( jQuery );

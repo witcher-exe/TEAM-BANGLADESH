@@ -1,0 +1,145 @@
+
+
+@media screen and (max-width: 1024px) {
+
+    .section-title.style7 {
+        padding: 0 0 44px 0;
+    }
+
+
+
+
+
+
+}
+
+
+@media screen and (max-width: 991px) {
+
+.service_list.style-2 .service-list-number:before {
+    display:none;
+}
+.echofy-header-top {
+    display: none;
+}
+	.section-title .title {
+		font-size: 36px;
+	}
+
+	/*=========
+	Case Study
+	===========*/
+
+	.case-study.style1 .case-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	/*=========
+	Filter Tab
+	===========*/
+
+	.filter-tab #tabs {
+		flex-wrap: wrap;
+	}
+	.filter-tab #tabs li{
+		margin-bottom: 30px;
+		flex: 0 0 auto;
+		width: 50%;
+	}
+	
+	.filter-tab .content {
+		padding-top: 50px;
+	}
+	.filter-tab .content .text img{
+		margin-top: 30px;
+	}
+	.filter-tab .content .text .row{
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 767px) {
+
+	.dreamit-slick-slider .single-slick .content-wrapper {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.dreamit-slick-slider .hero-text h2 {
+		font-size: 58px;
+	}
+	.dreamit-slick-slider .hero-text h3 {
+		font-size: 18px;
+	}
+	.portfolio-filter ul li {
+		display: block;
+	}
+	.portfolio-filter ul li::before {
+		top: auto;
+		bottom: 0;
+	}
+
+	/*=========
+	Case Study
+	===========*/
+
+	.case-study.style1 .case-grid {
+		display: block;
+	}
+	.case-study.style1 .case-grid .gird-item {
+		margin-bottom: 20px;
+	}
+.case-grid {
+    grid-template-columns: inherit;
+}
+
+}
+
+@media screen and (max-width: 599px) {
+
+	.filter-tab #tabs li{
+		width: 100%;
+	}
+
+	/* Subscribe */
+
+	.subscribe-form input[type="email"]{
+		width: 100%;
+		margin-bottom: 15px;
+	}
+	.subscribe-form input[type="submit"]{
+		position: static;
+		width: 100%;
+	}
+.section-title.style7 {
+    padding: 0 0 35px 0;
+}
+.case-grid {
+    grid-template-columns: inherit;
+}
+.service_box.style3 .service_number {
+    width: inherit;
+    display: block;
+}
+.service_box.style3 .service-btn a {
+    font-size: 14px;
+    top: 0;
+    margin: 20px 0 0 0;
+}
+.service_box.style3 .service_box-title a h3 {
+    font-size: 20px;
+    left: 15px;
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
