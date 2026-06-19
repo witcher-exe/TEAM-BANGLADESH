@@ -16,16 +16,17 @@ export const Route = createFileRoute("/committees")({
 type Person = { n: string; name: string; role: string; bio: string; img: string };
 
 const FOUNDER: Person = {
-  n: "01", name: "Dr. Muhit A Rana", role: "Founder & Chair",
+  n: "01", name: "Dr. Muhit A Rana", role: "Member",
   bio: "Visionary behind Team Bangladesh, leading the initiative since inception to drive nation-wide green development.",
   img: "/assets/downloaded img/precident.jpeg",
 };
 
 const EXEC: Person[] = [
-  { n: "02", name: "Salima Talukder Aruni", role: "Vice President", bio: "Internal logistics and executive strategy planning.", img: "/assets/downloaded img/aruni.jpeg" },
-  { n: "03", name: "Nahreen Asghar", role: "Executive Member", bio: "National outreach and public relations.", img: "/assets/downloaded img/tblogo.png" },
-  { n: "04", name: "Barister Rakeen", role: "Legal Advisor", bio: "Compliance and organizational legal frameworks.", img: "/assets/downloaded img/tblogo.png" },
-  { n: "05", name: "Imran Hossain", role: "Treasurer", bio: "Finance, audit and donor accountability.", img: "/assets/downloaded img/tblogo.png" },
+  { n: "02", name: "Nazmul", role: "Member", bio: "Actively contributing to the strategic and humanitarian operations of Team Bangladesh, driving progressive change within the community.", img: "/assets/downloaded img/nazmul.png" },
+  { n: "03", name: "Rakin", role: "Member", bio: "Providing crucial guidance and leadership to ensure that Team Bangladesh successfully meets its environmental and legal developmental targets.", img: "/assets/downloaded img/tblogo.png" },
+  { n: "04", name: "Salima Talukder Aruni", role: "Member", bio: "Passionate about sustainability, social progress, and helping communities adapt to a better lifestyle through innovative programs and grassroots engagement.", img: "/assets/downloaded img/aruni.jpeg" },
+  { n: "05", name: "Nahreen Asghar", role: "Member", bio: "Actively contributing to the strategic and humanitarian operations of Team Bangladesh, driving progressive change within the community.", img: "/assets/downloaded img/nahreen.jpeg" },
+  { n: "06", name: "Xem", role: "Member", bio: "Actively contributing to the strategic and humanitarian operations of Team Bangladesh, driving progressive change within the community.", img: "/assets/downloaded img/xem.png" },
 ];
 
 const DISTRICTS = [
