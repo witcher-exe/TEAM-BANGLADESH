@@ -1358,7 +1358,7 @@ ul {
 
 /* CTA */
 .cta-section {
-    background-color: var(--color-secondary);
+    background-color: #8eb563;
 }
 
 .cta-inner {
@@ -1368,7 +1368,7 @@ ul {
     background-image: url('../assets/images/earthcare/h6-rev-shape.png');
     background-size: cover;
     background-blend-mode: overlay;
-    background-color: var(--color-secondary);
+    background-color: #8eb563;
     padding: 0 50px;
     transition: transform 0.3s ease;
 }

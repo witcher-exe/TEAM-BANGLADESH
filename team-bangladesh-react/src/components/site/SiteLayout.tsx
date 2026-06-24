@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { useEffect } from 'react';
+import { motion } from "framer-motion";
 import { useNavigate, useLocation } from '@tanstack/react-router';
 import '../../original-style.css';
 
@@ -10,9 +11,9 @@ const headerHtml = `<header class="site-header">
                 <a href="index.html" class="logo" style="display: flex; align-items: center; gap: 10px;">
                     <img src="assets/downloaded img/tblogo.png" alt="Team Bangladesh Logo"
                         style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
-                    <div style="display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px;">
+                    <div style="display: flex; flex-direction: column; align-items: flex-end; justify-content: center; gap: 2px;">
                         <img id="nav-splash-logo" src="assets/downloaded img/Sobar-agge-Bangladesh-Logo.png" alt="Sobar agge Bangladesh" style="width: auto; height: 32px; opacity: 0; transition: opacity 0.5s ease; display: none;">
-                        <span class="logo-text" style="font-size: 18px; line-height: 1;">TEAM BANGLADESH</span>
+                        <span class="logo-text" style="font-size: 24px; line-height: 1; color: var(--color-primary);">TEAM BANGLADESH</span>
                     </div>
                 </a>
                 <nav class="desktop-nav">
@@ -72,88 +73,94 @@ const headerHtml = `<header class="site-header">
             </div>
         </div>
     </header>`;
-import { MapPin, Mail, Phone, Leaf } from "lucide-react";
+const footerHtml = `
+    <!-- PHASE 9: FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-left-top">
+                    <div class="footer-logo-area">
+                        <a href="index.html" class="logo footer-logo">
+                            <img src="assets/downloaded img/tblogo.png" alt="Team Bangladesh Logo"
+                                style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                            <span class="logo-text text-white">TeamBD</span>
+                        </a>
+                        <p style="color: var(--color-secondary); font-style: italic; margin-top: 5px;">... because
+                            Bangladesh First.</p>
+                    </div>
 
-export function Footer() {
-  const navigate = useNavigate();
-  
-  useEffect(() => {
-    const handleClick = (e) => {
-      const target = e.target.closest('a');
-      if (!target) return;
-      const href = target.getAttribute('href');
-      if (href && (href.endsWith('.html') || href.startsWith('/'))) {
-        e.preventDefault();
-        const route = href.replace('.html', '');
-        navigate({ to: route.startsWith('/') ? route : '/' + route });
-      }
-    };
-    document.querySelector('.site-footer-react')?.addEventListener('click', handleClick);
-    return () => document.querySelector('.site-footer-react')?.removeEventListener('click', handleClick);
-  }, [navigate]);
+                    <div class="footer-follow-section">
+                        <p class="follow-text">Follow us</p>
+                        <div class="footer-socials">
+                            <a href="https://www.facebook.com/groups/895660733312485/?ref=share&mibextid=NSMWBT"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
 
-  return (
-    <footer id="donate" className="relative mt-24 bg-ink text-white overflow-hidden site-footer-react">
-      <div className="absolute -top-32 -left-20 h-80 w-80 rounded-full bg-leaf/30 blob" />
-      <div className="absolute -bottom-32 -right-20 h-80 w-80 rounded-full bg-amber-glow/20 blob" />
-      <div className="relative mx-auto max-w-7xl px-5 py-20 grid lg:grid-cols-5 gap-12">
-        <div className="lg:col-span-1">
-          <div className="flex items-center gap-2 mb-4">
-            <img src="/assets/downloaded img/tblogo.png" alt="TeamBD Logo" style={{width: 40, height: 40, borderRadius: '50%', objectFit: 'cover'}} />
-            <div className="font-bold text-lg">TeamBD</div>
-          </div>
-          <p className="font-rock-salt text-amber-glow text-sm">… because Bangladesh First.</p>
-          <div className="flex gap-3 mt-6">
-            <a href="https://www.facebook.com/groups/895660733312485/?ref=share&mibextid=NSMWBT" className="h-10 w-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-leaf hover:border-leaf transition-all"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="#" className="h-10 w-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-leaf hover:border-leaf transition-all"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#" className="h-10 w-10 rounded-full border border-white/15 flex items-center justify-center hover:bg-leaf hover:border-leaf transition-all"><i className="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-        
-        <div>
-          <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Quick Links</h4>
-          <ul className="space-y-3 text-white/70 text-sm">
-            <li><a href="#about" className="hover:text-amber-glow">About Us</a></li>
-            <li><a href="#activities" className="hover:text-amber-glow">Our Activities</a></li>
-            <li><a href="#guidelines" className="hover:text-amber-glow">Organization Policies</a></li>
-            <li><a href="#donate" className="hover:text-amber-glow">Donation</a></li>
-          </ul>
-        </div>
+                </div>
 
-        <div>
-          <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Help</h4>
-          <ul className="space-y-3 text-white/70 text-sm">
-            <li><a href="#" className="hover:text-amber-glow">FAQ</a></li>
-            <li><a href="#" className="hover:text-amber-glow">Support</a></li>
-            <li><a href="#" className="hover:text-amber-glow contact-trigger-btn">Contact Us</a></li>
-          </ul>
-        </div>
+                <div class="footer-company-info desktop-only">
+                    <p class="copyright">&copy; 2026 Team Bangladesh. All Rights Reserved. <br> Design and
+                        Developed by CEEDtech</p>
+                </div>
+            </div>
 
-        <div>
-          <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Contact Info</h4>
-          <ul className="space-y-3 text-white/70 text-sm">
-            <li className="flex gap-2"><MapPin className="h-4 w-4 text-leaf shrink-0 mt-0.5" /> Bangladesh</li>
-            <li className="flex gap-2"><Mail className="h-4 w-4 text-leaf shrink-0 mt-0.5" /> info@teambangladesh.org</li>
-            <li className="flex gap-2"><Phone className="h-4 w-4 text-leaf shrink-0 mt-0.5" /> +880 1911-480021</li>
-          </ul>
-        </div>
+            <div class="footer-right">
+                <div class="footer-menus">
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Quick Links <i
+                                class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#activities">Our Activities</a></li>
+                            <li><a href="#guidelines">Organization Policies</a></li>
+                            <li><a href="#donate">Donation</a></li>
+                        </ul>
+                    </div>
 
-        <div>
-          <h4 className="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Legal</h4>
-          <ul className="space-y-3 text-white/70 text-sm">
-            <li><a href="#" className="hover:text-amber-glow">Terms of use</a></li>
-            <li><a href="#" className="hover:text-amber-glow">Privacy policy</a></li>
-            <li><a href="#" className="hover:text-amber-glow">Cookie policy</a></li>
-          </ul>
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Help <i class="fa-solid fa-chevron-down mobile-only"></i>
+                        </h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Support</a></li>
+                            <li><a href="#" class="contact-trigger-btn">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Contact Info <i
+                                class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content contact-list">
+                            <li><a href="#"><i class="fa-solid fa-location-dot"></i> Bangladesh</a></li>
+                            <li><a href="mailto:Contact.TeamBangladesh@gmail.com"><i class="fa-solid fa-envelope"></i>
+                                    Contact.TeamBangladesh@gmail.com</a></li>
+                            <li><a href="tel:+8801911480021"><i class="fa-solid fa-phone"></i> +880 1911-480021</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-menu-col accordion-group">
+                        <h3 class="widget-title accordion-btn">Legal <i
+                                class="fa-solid fa-chevron-down mobile-only"></i></h3>
+                        <ul class="footer-links accordion-content">
+                            <li><a href="#">Terms of use</a></li>
+                            <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Cookie policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-company-info mobile-only">
+                <hr class="mobile-footer-divider">
+                <p class="copyright">&copy; 2026 Team Bangladesh. All Rights Reserved. <br> Design and
+                    Developed by CEEDtech</p>
+            </div>
         </div>
-      </div>
-      
-      <div className="relative border-t border-white/10 py-6 text-center text-xs text-white/50">
-        © 2026 Team Bangladesh. All Rights Reserved. <br className="sm:hidden" /> Design and Developed by CEEDtech
-      </div>
-    </footer>
-  );
-}
+    </footer>`;
 
 export function SiteLayout({ children, noPadding = false }: { children: React.ReactNode, noPadding?: boolean }) {
   const location = useLocation();
@@ -182,7 +189,8 @@ export function SiteLayout({ children, noPadding = false }: { children: React.Re
     const splashLogo = document.getElementById('splash-logo');
     const navLogo = document.getElementById('nav-splash-logo');
     
-    const hasSeenSplash = sessionStorage.getItem('splashShown');
+    // Set to false to always show splash screen on reload (Ctrl+R)
+    const hasSeenSplash = false; // sessionStorage.getItem('splashShown');
 
     const removePreloader = () => {
         if(preloader) {
@@ -232,39 +240,83 @@ export function SiteLayout({ children, noPadding = false }: { children: React.Re
         }
     };
 
-    if(hasSeenSplash) {
-        removePreloader();
-    } else {
-        const splash1 = document.getElementById('splash-img-1');
-        const splash2 = document.getElementById('splash-img-2');
-        const splash3 = document.getElementById('splash-img-3');
-        
-        if(splash1 && splash2 && splash3 && splashLogo) {
-            // img1 starts at 200ms, fades in 1s → done at 1200ms
-            setTimeout(() => { splash1.style.opacity = '1'; }, 200);
-            // img2 starts at 1000ms, fades in 1s → done at 2000ms  
-            setTimeout(() => { splash2.style.opacity = '1'; }, 1000);
-            // img3 starts at 2000ms, fades in 1s → done at 3000ms
-            setTimeout(() => { splash3.style.opacity = '1'; }, 2000);
-            
-            // 4th pops instantly right when img3 is fully visible (3000ms)
-            setTimeout(() => {
-                splashLogo.style.opacity = '1';
-                splash1.style.display = 'none';
-                splash2.style.display = 'none';
-                splash3.style.display = 'none';
-            }, 3000);
-            
-            // Start morph 100ms after 4th appears
-            setTimeout(() => { removePreloader(); }, 3100);
+    if(preloader) {
+        if(hasSeenSplash) {
+            removePreloader();
         } else {
-            const fallbackTimer = setTimeout(removePreloader, 4000);
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    clearTimeout(fallbackTimer);
-                    removePreloader();
-                }, 1500);
-            });
+            const audio = new Audio('assets/splashscreen.mp3');
+            audio.volume = 0.8;
+
+            const startSplash = () => {
+                // Play splash audio
+                audio.play().catch(err => console.log("Audio play failed:", err));
+
+                const splash1 = document.getElementById('splash-img-1');
+                const splash2 = document.getElementById('splash-img-2');
+                const splash3 = document.getElementById('splash-img-3');
+                
+                if(splash1 && splash2 && splash3 && splashLogo) {
+                    // img1 starts at 200ms, fades in 1s → done at 1200ms
+                    setTimeout(() => { splash1.style.opacity = '1'; }, 200);
+                    // img2 starts at 1200ms, fades in 1s → done at 2200ms  
+                    setTimeout(() => { splash2.style.opacity = '1'; }, 1200);
+                    // img3 starts at 2200ms, fades in 1s → done at 3200ms
+                    setTimeout(() => { splash3.style.opacity = '1'; }, 2200);
+                    
+                    // 4th pops instantly at 3400ms
+                    setTimeout(() => {
+                        splashLogo.style.opacity = '1';
+                        splash1.style.display = 'none';
+                        splash2.style.display = 'none';
+                        splash3.style.display = 'none';
+                    }, 3400);
+                    
+                    // Start morph at 3500ms, matching 4.5s total audio duration (3500ms + 1000ms transition)
+                    setTimeout(() => { removePreloader(); }, 3500);
+                } else {
+                    const fallbackTimer = setTimeout(removePreloader, 4500);
+                    window.addEventListener('load', () => {
+                        setTimeout(() => {
+                            clearTimeout(fallbackTimer);
+                            removePreloader();
+                        }, 1500);
+                    });
+                }
+            };
+
+            // Fake an interaction attempt to bypass autoplay (Note: modern browsers strictly block this, but we attempt it)
+            try {
+                document.dispatchEvent(new MouseEvent('click'));
+                document.body.click();
+            } catch(e) {}
+
+            // Start splash screen automatically
+            startSplash();
+
+            // Fallback: If autoplay was blocked, play it the moment they touch/click anything while splash is visible
+            const startTime = Date.now();
+            const playOnInteract = () => {
+                const elapsed = (Date.now() - startTime) / 1000;
+                if (elapsed < 4.5) {
+                    audio.currentTime = elapsed;
+                    audio.play().catch(() => {});
+                }
+                document.removeEventListener('click', playOnInteract);
+                document.removeEventListener('touchstart', playOnInteract);
+            };
+            document.addEventListener('click', playOnInteract);
+            document.addEventListener('touchstart', playOnInteract);
+            
+            // Ensure listeners are removed if they never clicked during splash
+            setTimeout(() => {
+                document.removeEventListener('click', playOnInteract);
+                document.removeEventListener('touchstart', playOnInteract);
+            }, 4500);
+        }
+    } else {
+        if(navLogo) {
+            navLogo.style.display = 'block';
+            navLogo.style.opacity = '1';
         }
     }
 
@@ -648,16 +700,15 @@ export function SiteLayout({ children, noPadding = false }: { children: React.Re
   }, []);
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <div style={{ paddingTop: noPadding ? 0 : 70 }}>{children}</div>
-      <Footer />
+    <div style={{ minHeight: '100vh' }}>
+      <div dangerouslySetInnerHTML={{ __html: headerHtml }} />
+      <div style={{ paddingTop: noPadding ? 0 : 80 }}>{children}</div>
+      <div dangerouslySetInnerHTML={{ __html: footerHtml }} />
     </div>
   );
 }
 
 // Keep Reveal for other pages
-import { motion } from "framer-motion";
 export function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   return (
     <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.6, delay }}>

@@ -29,10 +29,9 @@ const landingHtml = `
                     <div class="slide-overlay"></div>
                     <div class="container slide-content">
                         <span class="handwriting fade-in-up">Let's build a greener future</span>
-                        <h1 class="fade-in-up delay-1">Pollution-free Green Earth,<br>Healthy Life</h1>
+                        <h1 class="fade-in-up delay-1">করবো কাজ - গড়বো দেশ,<br>সবার আগে বাংলাদেশ</h1>
                         <div class="hero-btns fade-in-up delay-2">
-                            <a href="#about" class="btn btn-primary">Discover More</a>
-                            <a href="#activities" class="btn btn-outline">Our Activities</a>
+                            <a href="#about" class="btn btn-primary">Join Us</a>
                         </div>
                     </div>
                 </div>
@@ -44,8 +43,7 @@ const landingHtml = `
                         <span class="handwriting fade-in-up">Protecting the ecology</span>
                         <h1 class="fade-in-up delay-1">Sustainable Growth for<br>Future Generations</h1>
                         <div class="hero-btns fade-in-up delay-2">
-                            <a href="#about" class="btn btn-primary">Discover More</a>
-                            <a href="#activities" class="btn btn-outline">Our Activities</a>
+                            <a href="#about" class="btn btn-primary">Join Us</a>
                         </div>
                     </div>
                 </div>
@@ -57,8 +55,7 @@ const landingHtml = `
                         <span class="handwriting fade-in-up">A noble purpose</span>
                         <h1 class="fade-in-up delay-1">Working Together for<br>Nature & People</h1>
                         <div class="hero-btns fade-in-up delay-2">
-                            <a href="#about" class="btn btn-primary">Discover More</a>
-                            <a href="#activities" class="btn btn-outline">Our Activities</a>
+                            <a href="#about" class="btn btn-primary">Join Us</a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +78,7 @@ const landingHtml = `
                             <div class="float-badge reveal-up">
                                 <div class="badge-icon"><i class="fa-solid fa-leaf"></i></div>
                                 <h4>Since 2026</h4>
-                                <p>Working for Bangladesh</p>
+                                <p>Bangladesh First</p>
                             </div>
                         </div>
                     </div>
@@ -101,12 +98,12 @@ const landingHtml = `
                                 <div class="counter-text">Years of Impact</div>
                             </div>
                             <div class="counter-item">
-                                <div class="counter-number">50k+</div>
+                                <div class="counter-number">1000+</div>
                                 <div class="counter-text">Trees Planted</div>
                             </div>
                             <div class="counter-item">
-                                <div class="counter-number">12k+</div>
-                                <div class="counter-text">Families Helped</div>
+                                <div class="counter-number">100+</div>
+                                <div class="counter-text">Peoples Helped</div>
                             </div>
                         </div>
                     </div>
@@ -125,51 +122,63 @@ const landingHtml = `
                 <div class="grid-4 activities-grid">
                     <!-- Item 1 -->
                     <div class="activity-card reveal-up">
-                        <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
-                        <h3>Tree Planting</h3>
-                        <p>Biodiversity conservation and mass plantation across regions.</p>
+                        <div class="card-icon"><i class="fa-solid fa-users"></i></div>
+                        <h3>Inclusive Development</h3>
+                        <p>Social, Educational, Environmental, Health...</p>
                     </div>
                     <!-- Item 2 -->
                     <div class="activity-card reveal-up delay-1">
-                        <div class="card-icon"><i class="fa-solid fa-paw"></i></div>
-                        <h3>Animal Care</h3>
-                        <p>Ensuring welfare, rescue, and care for street and wild animals.</p>
+                        <div class="card-icon"><i class="fa-solid fa-seedling"></i></div>
+                        <h3>Tree Plantation</h3>
+                        <p>Biodiversity conservation and mass plantation across Bangladesh.</p>
                     </div>
                     <!-- Item 3 -->
                     <div class="activity-card reveal-up delay-2">
-                        <div class="card-icon"><i class="fa-solid fa-house-medical"></i></div>
-                        <h3>Free Mega Medical Camp</h3>
-                        <p>Providing essential free medical services to underprivileged communities.</p>
+                        <div class="card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                        <h3>Educational Development</h3>
+                        <p>Implicit Learning based most effective education - developed by Dr Muhit A Rana</p>
                     </div>
                     <!-- Item 4 -->
                     <div class="activity-card reveal-up delay-3">
-                        <div class="card-icon"><i class="fa-solid fa-book-open-reader"></i></div>
-                        <h3>Educational Development</h3>
-                        <p>Empowering children through widespread national education improvement.</p>
+                        <div class="card-icon"><i class="fa-solid fa-paw"></i></div>
+                        <h3>Care for Homeless Paws</h3>
+                        <p>Ensuring welfare, rescue, and care for street and wild animals.</p>
                     </div>
                     <!-- Item 5 -->
                     <div class="activity-card reveal-up">
-                        <div class="card-icon"><i class="fa-solid fa-city"></i></div>
-                        <h3>Green City</h3>
-                        <p>Clean city initiatives for better, pollution-free urban life.</p>
+                        <div class="card-icon"><i class="fa-solid fa-house-medical"></i></div>
+                        <h3>Free Mega Medical Campaign</h3>
+                        <p>Providing essential free medical services to underprivileged communities.</p>
                     </div>
                     <!-- Item 6 -->
                     <div class="activity-card reveal-up delay-1">
-                        <div class="card-icon"><i class="fa-solid fa-recycle"></i></div>
-                        <h3>Waste Recycling</h3>
-                        <p>Effective waste removal and management systems.</p>
+                        <div class="card-icon"><i class="fa-solid fa-city"></i></div>
+                        <h3>Green City - Clean City</h3>
+                        <p>Clean city initiatives for better, pollution-free urban life.</p>
                     </div>
                     <!-- Item 7 -->
                     <div class="activity-card reveal-up delay-2">
+                        <div class="card-icon"><i class="fa-solid fa-solar-panel"></i></div>
+                        <h3>Renewable Energy Solutions</h3>
+                        <p>Solar energy is a sustainable solution to power our lives without harming the planet</p>
+                    </div>
+                    <!-- Item 8 -->
+                    <div class="activity-card reveal-up delay-3">
                         <div class="card-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
                         <h3>Climate Change</h3>
                         <p>Disaster management and climate resilience building.</p>
                     </div>
-                    <!-- Item 8 -->
-                    <div class="activity-card reveal-up delay-3">
+                    <!-- Item 9 -->
+                    <div class="activity-card reveal-up">
                         <div class="card-icon"><i class="fa-solid fa-faucet-drip"></i></div>
-                        <h3>Water & Sanitation</h3>
-                        <p>River development and clean drinking water access.</p>
+                        <h3>Rainwater Harvesting</h3>
+                        <p>Saving rainwater today for safe drinking tomorrow</p>
+                    </div>
+                    <!-- Item 10 -->
+                    <div class="activity-card reveal-up delay-1">
+                        <div class="card-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+                        <h3>Talent Beyond Poverty</h3>
+                        <p>Opening doors of opportunity for deserving poorer learners.</p>
                     </div>
                 </div>
             </div>
@@ -188,7 +197,7 @@ const landingHtml = `
                             <!-- Fixed to perfectly equal 3/2 aspect ratio rectangle -->
                             <img src="assets/downloaded img/slide_img1.jpeg" alt="Tree Plant"
                                 class="premium-rounded-img" style="width: 100%; aspect-ratio: 3/2; object-fit: cover;">
-                            <h3 class="mt-20">Tree Plant</h3>
+                            <h3 class="mt-20">Tree Plantation</h3>
                         </div>
                     </div>
                     <div class="col-4 reveal-up delay-1">
@@ -196,7 +205,7 @@ const landingHtml = `
                             <!-- Fixed to perfectly equal 3/2 aspect ratio rectangle -->
                             <img src="assets/downloaded img/animal.jpeg" alt="Animal Care" class="premium-rounded-img"
                                 style="width: 100%; aspect-ratio: 3/2; object-fit: cover;">
-                            <h3 class="mt-20">Animal care</h3>
+                            <h3 class="mt-20">Street Animal Care</h3>
                         </div>
                     </div>
                     <div class="col-4 reveal-up delay-2">
@@ -204,7 +213,7 @@ const landingHtml = `
                             <!-- Fixed to perfectly equal 3/2 aspect ratio rectangle -->
                             <img src="assets/downloaded img/med.png" alt="Free Mega Medical Camp"
                                 class="premium-rounded-img" style="width: 100%; aspect-ratio: 3/2; object-fit: cover;">
-                            <h3 class="mt-20">Free mega medical camp</h3>
+                            <h3 class="mt-20">Free Mega Medical Camp</h3>
                         </div>
                     </div>
                 </div>
@@ -342,11 +351,11 @@ const landingHtml = `
                         <div class="team-slide">
                             <div class="row align-center">
                                 <div class="col-6 panel-img">
-                                    <img src="assets/downloaded img/xem.png" alt="Member"
+                                    <img src="assets/downloaded img/tblogo.png" alt="Sultana Ahmed, MP"
                                         class="premium-rounded-img" style="object-fit: contain; background: #fff;">
                                 </div>
                                 <div class="col-6 panel-text pl-50">
-                                    <h2 class="leader-name">Xem</h2>
+                                    <h2 class="leader-name">Sultana Ahmed, MP</h2>
                                     <h4 class="leader-designation">Member</h4>
                                     <h5 class="leader-designation">Team Bangladesh</h5>
                                     <p class="section-desc">Actively contributing to the strategic and humanitarian
@@ -385,7 +394,7 @@ const landingHtml = `
         <section id="guidelines" class="guidelines-section bg-dark pt-120 pb-120">
             <div class="container text-light">
                 <div class="section-header text-center">
-                    <span class="section-subtitle reveal-up">Group Guidelines</span>
+                    <span class="section-subtitle reveal-up">Our Mission</span>
                     <h2 class="section-title text-white reveal-up">Objectives & Policies</h2>
                     <p class="mt-20 reveal-up">This group coordinates policy-making, planning, and implementation among
                         honorable members.</p>
@@ -395,7 +404,7 @@ const landingHtml = `
                     <div class="col-6 reveal-left">
                         <div class="policy-card">
                             <div class="policy-icon"><i class="fa-solid fa-bullseye"></i></div>
-                            <h3>Group Objective</h3>
+                            <h3>Our Vision</h3>
                             <p>This group is formed to make the coordination, policy-making, planning, and
                                 implementation of activities more dynamic and fruitful among the honorable members of
                                 various levels of this organization.</p>
@@ -554,7 +563,8 @@ function Home() {
     const splashLogo = document.getElementById('splash-logo');
     const navLogo = document.getElementById('nav-splash-logo');
     
-    const hasSeenSplash = sessionStorage.getItem('splashShown');
+    // Set to false to always show splash screen on reload (Ctrl+R)
+    const hasSeenSplash = false; // sessionStorage.getItem('splashShown');
 
     const removePreloader = () => {
         if(preloader) {
@@ -604,45 +614,90 @@ function Home() {
         }
     };
 
-    if(hasSeenSplash) {
-        removePreloader();
-    } else {
-        const splash1 = document.getElementById('splash-img-1');
-        const splash2 = document.getElementById('splash-img-2');
-        const splash3 = document.getElementById('splash-img-3');
-        
-        if(splash1 && splash2 && splash3 && splashLogo) {
-            // img1 starts at 200ms, fades in 1s → done at 1200ms
-            setTimeout(() => { splash1.style.opacity = '1'; }, 200);
-            // img2 starts at 1000ms, fades in 1s → done at 2000ms  
-            setTimeout(() => { splash2.style.opacity = '1'; }, 1000);
-            // img3 starts at 2000ms, fades in 1s → done at 3000ms
-            setTimeout(() => { splash3.style.opacity = '1'; }, 2000);
-            
-            // 4th pops instantly right when img3 is fully visible (3000ms)
-            setTimeout(() => {
-                splashLogo.style.opacity = '1';
-                splash1.style.display = 'none';
-                splash2.style.display = 'none';
-                splash3.style.display = 'none';
-            }, 3000);
-            
-            // Start morph 100ms after 4th appears
-            setTimeout(() => { removePreloader(); }, 3100);
+    if(preloader) {
+        if(hasSeenSplash) {
+            removePreloader();
         } else {
-            const fallbackTimer = setTimeout(removePreloader, 4000);
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    clearTimeout(fallbackTimer);
-                    removePreloader();
-                }, 1500);
-            });
+            const audio = new Audio('assets/splashscreen.mp3');
+            audio.volume = 0.8;
+
+            const startSplash = () => {
+                // Play splash audio
+                audio.play().catch(err => console.log("Audio play failed:", err));
+
+                const splash1 = document.getElementById('splash-img-1');
+                const splash2 = document.getElementById('splash-img-2');
+                const splash3 = document.getElementById('splash-img-3');
+                
+                if(splash1 && splash2 && splash3 && splashLogo) {
+                    // img1 starts at 200ms, fades in 1s → done at 1200ms
+                    setTimeout(() => { splash1.style.opacity = '1'; }, 200);
+                    // img2 starts at 1200ms, fades in 1s → done at 2200ms  
+                    setTimeout(() => { splash2.style.opacity = '1'; }, 1200);
+                    // img3 starts at 2200ms, fades in 1s → done at 3200ms
+                    setTimeout(() => { splash3.style.opacity = '1'; }, 2200);
+                    
+                    // 4th pops instantly at 3400ms
+                    setTimeout(() => {
+                        splashLogo.style.opacity = '1';
+                        splash1.style.display = 'none';
+                        splash2.style.display = 'none';
+                        splash3.style.display = 'none';
+                    }, 3400);
+                    
+                    // Start morph at 3500ms, matching 4.5s total audio duration (3500ms + 1000ms transition)
+                    setTimeout(() => { removePreloader(); }, 3500);
+                } else {
+                    const fallbackTimer = setTimeout(removePreloader, 4500);
+                    window.addEventListener('load', () => {
+                        setTimeout(() => {
+                            clearTimeout(fallbackTimer);
+                            removePreloader();
+                        }, 1500);
+                    });
+                }
+            };
+
+            // Fake an interaction attempt to bypass autoplay (Note: modern browsers strictly block this, but we attempt it)
+            try {
+                document.dispatchEvent(new MouseEvent('click'));
+                document.body.click();
+            } catch(e) {}
+
+            // Start splash screen automatically
+            startSplash();
+
+            // Fallback: If autoplay was blocked, play it the moment they touch/click anything while splash is visible
+            const startTime = Date.now();
+            const playOnInteract = () => {
+                const elapsed = (Date.now() - startTime) / 1000;
+                if (elapsed < 4.5) {
+                    audio.currentTime = elapsed;
+                    audio.play().catch(() => {});
+                }
+                document.removeEventListener('click', playOnInteract);
+                document.removeEventListener('touchstart', playOnInteract);
+            };
+            document.addEventListener('click', playOnInteract);
+            document.addEventListener('touchstart', playOnInteract);
+            
+            // Ensure listeners are removed if they never clicked during splash
+            setTimeout(() => {
+                document.removeEventListener('click', playOnInteract);
+                document.removeEventListener('touchstart', playOnInteract);
+            }, 4500);
+        }
+    } else {
+        if(navLogo) {
+            navLogo.style.display = 'block';
+            navLogo.style.opacity = '1';
         }
     }
 
     // 2. Sticky Navigation
     const navBar = document.querySelector('.nav-bar');
     window.addEventListener('scroll', () => {
+        if (!navBar) return;
         if (window.scrollY > 50) {
             navBar.classList.add('scrolled');
         } else {

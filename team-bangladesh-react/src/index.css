@@ -1,28 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Rock+Salt&family=Rubik:wght@400;500;600;700&display=swap');
-@tailwind base;
+
+/* DO NOT include @tailwind base — it runs Preflight which nukes heading font-sizes,
+   image display, and other styles from original-style.css */
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Outfit', sans-serif; background: #fff; color: #111827; }
-  .script { font-family: 'Rock Salt', cursive; }
-}
-
 @layer utilities {
-  .gradient-leaf {
+  .tw-gradient-leaf {
     background: linear-gradient(135deg, #2e7d32, #4caf50);
   }
-  .gradient-warm {
+  .tw-gradient-warm {
     background: linear-gradient(135deg, #ffd54f, #ffb300);
   }
-  .blob {
+  .tw-blob {
     border-radius: 50%;
     filter: blur(60px);
     opacity: 0.6;
   }
-  .text-leaf { color: #2e7d32; }
-  .text-amber-glow { color: #ffd54f; }
-  .text-ink { color: #1a1a2e; }
-  .text-muted-foreground { color: #6b7280; }
 }

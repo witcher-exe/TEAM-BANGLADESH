@@ -5,7 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const splashLogo = document.getElementById('splash-logo');
     const navLogo = document.getElementById('nav-splash-logo');
     
-    const hasSeenSplash = sessionStorage.getItem('splashShown');
+    // If there is no splash screen on this page, do nothing
+    if(!preloader) {
+        if(navLogo) {
+            navLogo.style.display = 'block';
+            navLogo.style.opacity = '1';
+        }
+        return;
+    }
+    
+    // Check if the page was hard reloaded (Ctrl+R)
+    const isReload = window.performance && (
+        (window.performance.navigation && window.performance.navigation.type === 1) ||
+        (window.performance.getEntriesByType && window.performance.getEntriesByType("navigation").length > 0 && window.performance.getEntriesByType("navigation")[0].type === "reload")
+    );
+    // Show splash if it hasn't been seen this session OR if the user manually reloaded
+    const hasSeenSplash = sessionStorage.getItem('splashShown') && !isReload;
 
     const removePreloader = () => {
         if(preloader) {
@@ -58,37 +73,74 @@ document.addEventListener('DOMContentLoaded', () => {
     if(hasSeenSplash) {
         removePreloader();
     } else {
-        const splash1 = document.getElementById('splash-img-1');
-        const splash2 = document.getElementById('splash-img-2');
-        const splash3 = document.getElementById('splash-img-3');
-        
-        if(splash1 && splash2 && splash3 && splashLogo) {
-            // img1 starts at 200ms, fades in 1s → done at 1200ms
-            setTimeout(() => { splash1.style.opacity = '1'; }, 200);
-            // img2 starts at 1000ms, fades in 1s → done at 2000ms  
-            setTimeout(() => { splash2.style.opacity = '1'; }, 1000);
-            // img3 starts at 2000ms, fades in 1s → done at 3000ms
-            setTimeout(() => { splash3.style.opacity = '1'; }, 2000);
+        const audio = new Audio('assets/splashscreen.mp3');
+        audio.volume = 0.8;
+
+        const startSplash = () => {
+            // Play splash audio
+            audio.play().catch(err => console.log("Audio play failed:", err));
+
+            const splash1 = document.getElementById('splash-img-1');
+            const splash2 = document.getElementById('splash-img-2');
+            const splash3 = document.getElementById('splash-img-3');
             
-            // 4th pops instantly right when img3 is fully visible (3000ms)
-            setTimeout(() => {
-                splashLogo.style.opacity = '1';
-                splash1.style.display = 'none';
-                splash2.style.display = 'none';
-                splash3.style.display = 'none';
-            }, 3000);
-            
-            // Start morph 100ms after 4th appears
-            setTimeout(() => { removePreloader(); }, 3100);
-        } else {
-            const fallbackTimer = setTimeout(removePreloader, 4000);
-            window.addEventListener('load', () => {
+            if(splash1 && splash2 && splash3 && splashLogo) {
+                // img1 starts at 200ms, fades in 1s → done at 1200ms
+                setTimeout(() => { splash1.style.opacity = '1'; }, 200);
+                // img2 starts at 1200ms, fades in 1s → done at 2200ms  
+                setTimeout(() => { splash2.style.opacity = '1'; }, 1200);
+                // img3 starts at 2200ms, fades in 1s → done at 3200ms
+                setTimeout(() => { splash3.style.opacity = '1'; }, 2200);
+                
+                // 4th pops instantly at 3400ms
                 setTimeout(() => {
-                    clearTimeout(fallbackTimer);
-                    removePreloader();
-                }, 1500);
-            });
-        }
+                    splashLogo.style.opacity = '1';
+                    splash1.style.display = 'none';
+                    splash2.style.display = 'none';
+                    splash3.style.display = 'none';
+                }, 3400);
+                
+                // Start morph at 3500ms, matching 4.5s total audio duration (3500ms + 1000ms transition)
+                setTimeout(() => { removePreloader(); }, 3500);
+            } else {
+                const fallbackTimer = setTimeout(removePreloader, 4500);
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        clearTimeout(fallbackTimer);
+                        removePreloader();
+                    }, 1500);
+                });
+            }
+        };
+
+        // Fake an interaction attempt to bypass autoplay (Note: modern browsers strictly block this, but we attempt it)
+        try {
+            document.dispatchEvent(new MouseEvent('click'));
+            document.body.click();
+        } catch(e) {}
+
+        // Start splash screen automatically
+        startSplash();
+
+        // Fallback: If autoplay was blocked, play it the moment they touch/click anything while splash is visible
+        const startTime = Date.now();
+        const playOnInteract = () => {
+            const elapsed = (Date.now() - startTime) / 1000;
+            if (elapsed < 4.5) {
+                audio.currentTime = elapsed;
+                audio.play().catch(() => {});
+            }
+            document.removeEventListener('click', playOnInteract);
+            document.removeEventListener('touchstart', playOnInteract);
+        };
+        document.addEventListener('click', playOnInteract);
+        document.addEventListener('touchstart', playOnInteract);
+        
+        // Ensure listeners are removed if they never clicked during splash
+        setTimeout(() => {
+            document.removeEventListener('click', playOnInteract);
+            document.removeEventListener('touchstart', playOnInteract);
+        }, 4500);
     }
 
     // 2. Sticky Navigation
