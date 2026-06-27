@@ -73,12 +73,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if(hasSeenSplash) {
         removePreloader();
     } else {
-        const audio = new Audio('assets/splashscreen.mp3');
-        audio.volume = 0.8;
+        const audio = document.getElementById('splash-audio');
+        if (audio) {
+            audio.volume = 0.8;
+            // Force load just in case the browser deferred it
+            audio.load();
+        }
 
         const startSplash = () => {
-            // Play splash audio
-            audio.play().catch(err => console.log("Audio play failed:", err));
+            // Play splash audio (might be blocked by browser autoplay policies)
+            if (audio) {
+                audio.play().catch(err => console.log("Autoplay blocked or failed:", err));
+            }
 
             const splash1 = document.getElementById('splash-img-1');
             const splash2 = document.getElementById('splash-img-2');
@@ -113,34 +119,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Fake an interaction attempt to bypass autoplay (Note: modern browsers strictly block this, but we attempt it)
-        try {
-            document.dispatchEvent(new MouseEvent('click'));
-            document.body.click();
-        } catch(e) {}
-
         // Start splash screen automatically
         startSplash();
 
         // Fallback: If autoplay was blocked, play it the moment they touch/click anything while splash is visible
         const startTime = Date.now();
         const playOnInteract = () => {
-            const elapsed = (Date.now() - startTime) / 1000;
-            if (elapsed < 4.5) {
-                audio.currentTime = elapsed;
-                audio.play().catch(() => {});
+            // Simply play the audio from the beginning (or current position)
+            // We DO NOT seek (no audio.currentTime = elapsed) to bypass mobile HTTP Range/seeking bugs that silence the audio.
+            if (audio) {
+                audio.play().catch(err => {
+                    console.log("Play on interact failed:", err);
+                });
             }
-            document.removeEventListener('click', playOnInteract);
-            document.removeEventListener('touchstart', playOnInteract);
+            cleanupListeners();
         };
-        document.addEventListener('click', playOnInteract);
-        document.addEventListener('touchstart', playOnInteract);
+
+        const cleanupListeners = () => {
+            window.removeEventListener('click', playOnInteract);
+            window.removeEventListener('touchend', playOnInteract);
+            if (preloader) {
+                preloader.removeEventListener('click', playOnInteract);
+                preloader.removeEventListener('touchend', playOnInteract);
+            }
+        };
+
+        // Attach to window (which always receives events on iOS) and the preloader itself
+        window.addEventListener('click', playOnInteract);
+        window.addEventListener('touchend', playOnInteract);
+        if (preloader) {
+            preloader.addEventListener('click', playOnInteract);
+            preloader.addEventListener('touchend', playOnInteract);
+            // Force iOS Safari to treat the preloader as interactive
+            preloader.style.cursor = 'pointer';
+        }
         
         // Ensure listeners are removed if they never clicked during splash
-        setTimeout(() => {
-            document.removeEventListener('click', playOnInteract);
-            document.removeEventListener('touchstart', playOnInteract);
-        }, 4500);
+        setTimeout(cleanupListeners, 4500);
     }
 
     // 2. Sticky Navigation
